@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>包年会员100元抵扣红包</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="http://www.jq22.com/demo/jqueryConfirm20160413/css/jquery-confirm.css">
+<script type="text/javascript" src="http://www.jq22.com/demo/jqueryConfirm20160413/js/jquery-confirm.js"></script>
+</head>
+<body>
+
+<div>
+  <img src="/Public/Wap/images/hongbao.png" width="100%" onload="show(this)" usemap="#pay">
+
+</div>
+
+<script type="text/javascript">
+  function show(obj){
+    var w = obj.width;
+    var h = obj.height;
+    var url = "<{:U('Pay/wei_pay')}>";
+    // var html = '<map name="pay"><area shape="rect" coords="'+w*0.38+','+h*0.28+','+w*0.61+','+h*0.43+'" href="'+url+'" /></map>';
+    var html = '<map name="pay"><area shape="rect" coords="'+w*0.38+','+h*0.28+','+w*0.61+','+h*0.43+'" href="javascript:show_confirm(\''+url+'\')" /></map>';
+    $('img').attr({
+      width: w,
+      height: h
+    });
+    $('img').after(html);
+  }
+
+  function show_confirm(u){
+        $(function(){
+        $.confirm({
+          title: false,
+          content: '您确定要开通包年会员吗?',
+          confirmButtonClass: 'btn-info',
+          cancelButtonClass: 'btn-danger',
+          confirmButton: '确定',
+          cancelButton: '取消',
+          animation: 'bottom',
+          icon: 'fa fa-check',
+          confirm: function(){
+            window.location.href=u;
+          },
+          // backgroundDismiss: true
+        }); 
+    })
+  }
+</script>
+
+</body>
+</html>

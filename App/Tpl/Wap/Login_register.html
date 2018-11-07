@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>账户注册-<{$website.web_name}></title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/CheckPost.js"></script>
+</head>
+<body>
+<header class="headers">
+    <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title">账户注册</div>
+  <a href="/">
+  <div class="home"><span></span></div>
+  </a> </header>
+<div id="box">
+  <div class="con_tishi">
+    <div class="con_tishi_title">快捷登录</div>
+    <table width="100%" class="kuaijie">
+      <tr>
+        <td valign="middle" align="center"><a href="/Accounts/qq.html?backUrl=<{$Think.get.backUrl}>"><img src="/Public/Wap/images/share_icon_4.png"/><br>
+          QQ</a></td>
+        <td valign="middle" align="center"><a href="/Accounts/weibo.html?backUrl=<{$Think.get.backUrl}>"><img src="/Public/Wap/images/share_icon_1.png"/><br>
+          微博</a></td>
+      <if condition="$web_id neq 25">
+          <td valign="middle" align="center"><a href="/Accounts/weixin.html?backUrl=<{$Think.get.backUrl}>"><img src="/Public/Wap/images/share_icon_2.png"/><br>
+          微信</a></td>
+        </else>
+        
+      </if>
+      </tr>
+    </table>
+  </div>    
+  <div class="con_tishi">
+	<div class="con_tishi_title">普通账户注册</div>
+    <div class="change-pwd">
+            <p>账户：</p>
+            <div class="wrapper">
+                <input name="username" type="text" class="input" placeholder="请输入您的账户" id="username">
+            </div>
+             <p>昵称：</p>
+            <div class="wrapper">
+                <input name="penname" type="text" class="input" placeholder="请输入您的昵称" id="penname">
+            </div>           
+            <p>密码：</p>
+            <div class="wrapper" style="margin-bottom:10px;">
+                <input name="userpass" type="password" class="input" placeholder="请输入您的密码" id="userpass">
+            </div>
+            <input type="submit" class="btn01" value="提交" id="regsubmits"/>
+         <p class="reg_tishi">已有账户？<a href="/Login/index.html?backUrl=<{$Think.get.backUrl}>" class="reg">点击登录</a></p>
+    </div>
+</div>
+</div>
+<include file="Index:bot" />
+</body>
+</html>

@@ -1,0 +1,227 @@
+.p_button a {
+    display: block;
+    height: 4.2rem;
+    background: #00a19e;
+    color: white;
+    text-align: center;
+    line-height: 4.2rem;
+    width: 45%;
+    float: left;
+    font-size: 2.1rem;
+}
+.p_button .p_button_prev {
+  margin-left: 3.3%
+}
+.p_button .p_button_next {
+  margin-left: 3.3%
+}
+.p_button_dashang span {
+    display: block;
+    margin-bottom: 2%;
+    text-align: center;
+}
+.p_button_dashang img {
+  margin: 0 auto;
+}
+.t_menu {
+    font-size: 1.7rem;
+    background: #333;
+    color: #ccc;
+    display: none;
+}
+.t_menu span {
+    display: inline-block;
+    text-align: center;
+    margin: 3% 0;
+}
+.t_menu_font span {
+    width: 18%;
+}
+.t_menu_detail span {
+    width: 18%;
+}
+.t_menu_font .font_add,.font_reduce {
+  border: 1px solid #e7e7e7;
+  border-radius: 5px;
+}
+.t_menu_font .font_add {
+    width: 19%
+}
+.t_menu_font .font_reduce{
+    width: 19%
+}
+.t_menu_bg span {
+  width: 11%;
+  height: 2.5rem;  
+}
+.t_menu_bg  .beij{
+  width: 18%;
+}
+.t_menu_bg .beij_01{
+  background-color: #F5DCE4;
+  margin: 3% 1.5%;
+}
+.t_menu_bg .beij_02{
+  background-color: #DFF5DC; 
+  margin: 3% 1.5%;
+}
+.t_menu_bg .beij_03{
+  background-color: #38658C;
+    margin: 3% 1.5%;
+}
+.t_menu_bg .beij_04{
+  background-color: #F4EED9; 
+  margin: 3% 1.5%;
+}
+.t_menu_bg .beij_05{
+  background-color: #ddd;  
+  margin: 3% 1.5%;
+}
+.t_menu_detail span {
+    background-repeat: no-repeat;
+    background-size: 30px 30px;
+    background-position: 50% 0;
+    padding-top: 9%;
+    margin-top: 1%;
+}
+.t_menu_detail .detail_syz {
+    width: 20%;
+    background-image: url(/Public/NewWap/images/t_syz.png);
+}
+.t_menu_detail .detail_mulu {
+    background-image: url(/Public/NewWap/images/t_mulu.png);
+}
+.t_menu_detail .detail_index {
+    background-image: url(/Public/NewWap/images/t_index.png);
+}
+.t_menu_detail .detail_yz {
+    background-image: url(/Public/NewWap/images/t_yj.png);
+}
+.t_menu_detail .detail_xyz {
+    background-image: url(/Public/NewWap/images/t_xyz.png);
+}
+.t_on_background {
+  background-image: url(/Public/NewWap/images/t_gou.png);
+  background-repeat: no-repeat;
+  background-position: 50% 0;  
+}
+.c_middle {
+    height: 25%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+
+/*按钮*/
+.btn01 {
+  width:100%;
+  background-color:#00a19e;
+  color:#fff;
+  padding:10px 0px;
+  -webkit-appearance:none;
+}
+/*按钮点击之后*/
+.btn01:hover{
+  width:100%;
+  background-color:#C2C2C2;
+  color:#fff;
+  padding:10px 0px;
+  -webkit-appearance:none;
+}
+/*内容提示*/
+.con_tishi {
+  background:#FFF;
+  padding:10px;
+  margin-bottom:10px;
+}
+.con_tishi .con_tishi_title {
+  border-left-width: 2px;
+  border-left-style: solid;
+  border-left-color: #00a19e;
+  line-height: 20px;
+  padding-left: 15px;
+  font-size: 16px;
+  color: #00a19e;
+  margin-bottom: 10px;
+}
+.con_tishi .warm_prompt p {
+  font-size: 14px;
+  line-height: 30px;
+}
+.con_tishi .warm_prompt .info {
+  padding-left: 15px;
+  background-image: url(images/ico_01.png);
+  background-repeat: no-repeat;
+  background-size:8px 8px;
+  background-position: left 10px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: #e9e9e9;
+}
+.con_tishi .warm_prompt .infos {
+  text-indent: 20px;
+}
+.con_tishi font{ color: #e563a3;}
+.mod-content {
+  font-size:14px;
+  width:100%;
+}
+.user-list .user-list-item {
+  float: left;
+  display: block;
+  width:33%;
+  text-align: center;
+        height: 117px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+}
+.user-list .user-list-item:last-child {
+  margin-right:0;
+}
+.user-list .on{
+    border: 1px solid #00a19e;
+    color: #009f78;
+    -moz-border-radius: 5px;      /* Gecko browsers */
+    -webkit-border-radius: 5px;   /* Webkit browsers */
+    border-radius:5px;            /* W3C syntax */
+}
+.user-list .user-list-item .img {
+        height: 60px;
+        width: 60px;
+        overflow: hidden;
+        display: inline-block;
+        margin: 0px;
+        padding: 0px;
+}
+.user-list .user-list-item .img img {
+        height: 60px;
+        width: 60px;
+        margin: 0px;
+        padding: 0px;
+}
+.user-list .user-list-item .number {
+  display: block;
+  text-align: center;
+  line-height: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.supportform {
+  color: #666;
+}
+
+.mt15 {
+  margin-top:15px
+}
+.supportform .support-text {
+  height:88px;
+}
+
+.wxtip{background: rgba(0,0,0,0.8); text-align: center; position: fixed; left:0; top: 0; width: 100%; height: 100%; z-index: 998; display: none;}
+.wxtip-icon{display: block; position: absolute; right: 20px; top: 10px;}
+.wxtip-icon2{display: block; position: absolute; right: 0px; left:0px;bottom: 0px;}

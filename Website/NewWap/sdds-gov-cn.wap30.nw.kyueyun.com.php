@@ -1,0 +1,16 @@
+<?php $website=array (
+  'master_id' => '30',
+  'web_id' => '30',
+  'web_name' => '盛文联盟',
+  'webphone' => '13968175091',
+  'qq' => '616158457',
+  'automatic' => '1',
+  'weixin' => NULL,
+  'web_url' => 'sdds-gov-cn.wap30.nw.kyueyun.com',
+  'all_ps' => 'hezuo',
+  'login_url' => 'm.kyueyun.com',
+  'preload' => 'NewWap',
+  'beian' => '赣ICP备18001577号-2',
+  'wx_id' => 'wxbbd3b017b3e18d83',
+  'wx_secret' => '89c98fc18b2779a1313ef1c710c5e3df',
+);

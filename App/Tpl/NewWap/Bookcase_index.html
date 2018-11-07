@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>我的书架</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+<style type="text/css">
+.del_span{
+    padding: 2px 8px;
+    background-color: #00a19e;
+    color: #fff;
+    border-radius: 3px;
+    float: right;
+    margin-top: -1.4rem;
+    font-size: 12px;
+    line-height: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="all">
+    <include file="Header:back" />
+    <div class="sc1">
+      <!-- <div class="sc4">
+        <a <if condition="$r eq 0"> class="sc5" </if> href="/Bookcase/index/r/0.html">最近阅读</a>
+        <a <if condition="$r eq 1"> class="sc5" </if> href="/Bookcase/index/r/1.html">我的收藏</a>
+        <div class="clearfix"></div>
+      </div> -->
+      <div class="sc6">
+     
+        <div class="sc2"> 
+        <foreach name="books" item="vo">
+          <div class="sc3">
+            <ul style="width: 95%">
+                <li>
+                    <h2><a style="color: #666666;" href="/books/<{$vo.book_id}>.html" ><{$vo.book_name}></a></h2>
+                    <if condition="$r eq 0">
+                    <a href="/chapter/<{$vo.book_id}>/<{$vo.chapter}>.html">
+                      <h6 class="overhide" style="color: #ee1a1a;">
+                        <span style="color:#EE4000">上次读到：</span>
+                        <{$vo.title}>
+                      </h6>
+                    </a>
+                    </if>
+                    <span class="del_span" onClick="del(this,<{$vo.book_id}>,<{$r}>,<{$vo.id|default=0}>)">删除</span>
+                <div style="height:1px;background-color:#f1f1f1;margin-top: 1.2rem;"></div>
+                </li>
+            </ul>
+           <div class="clearfix"></div> 
+          </div> 
+        </foreach>
+         <div class="clearfix"></div> 
+        </div> 
+      </div> 
+    </div>
+    <include file="/NewWap/Index:bot" />
+  </div>
+<script type="text/javascript">
+ /*删除书架*/
+function del(obj, bookid,r, id) {
+            $.ajax({
+                url: "/Bookcase/del.html",
+                type: "post",
+                data: 'bookid=' + bookid+"&r="+r+"&id="+id,
+                success: function (data) {
+                    if (data == 0) {
+                        // Toast("删除成功", 1000);
+                        $(obj).parents("li").remove();
+                        // window.location.reload();
+                    } else {
+                        Toast("系统错误", 1000);
+                        $("#errors").html("系统错误");
+                    }
+                }
+            });
+    
+}   
+</script> 
+</body>
+</html>

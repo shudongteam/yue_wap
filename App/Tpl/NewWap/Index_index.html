@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<title><{$website.web_name}>_原创小说网</title>
+<meta name="keywords" content="<{$website.web_name}>,小说网,原创小说网"/>
+<meta name="description" content="<{$website.web_name}>,最热门的免费小说网站,提供武侠仙侠,奇幻玄幻,科幻灵异,都市言情,穿越女频,青春校园,历史军事,网游竞技,职业官场等网络热门的书籍下载跟阅读！"/>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<!-- <link href="__PUBLIC__/<{$website.preload}>/style1.css" type="text/css" rel="stylesheet" /> -->
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/slick.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+<!-- <link rel="stylesheet" href="__PUBLIC__/<{$website.preload}>/dist/css/swiper.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/<{$website.preload}>/dist/css/bootstrap.min.css" /> -->
+<style type="text/css">
+  .book_name_p1 {color: #666666;font-size: 12px;margin-top: 5px;text-align: center;}
+  .book_name_p2 {display: inline-block;line-height: 2rem;font-size: 15px;margin-top: 0.4rem;}
+  .book_name_p3 {overflow: hidden;text-overflow: ellipsis;height: 5.5rem;line-height: 1.4rem;}
+  .book_name_p2 a {width: 100%;color: #666666;float: none;margin-left: 0.5rem;}
+  .bangdan h2 {color: #636164;}
+  .cxn a img {width: 95%;}
+  .xh {margin-top: 5px;}
+</style>
+</head>
+<body>
+<div class="all">
+<include file="/NewWap/Index:top" />
+    <div id="banner-swap">
+    <div class="slide-con" id="homeSlide">
+      <volist name="slide" id="vo">
+          <div class="slick-slide">
+            <a href="/books/<{$vo.book_id}>.html" class="active"><img src="<{:C('IMG_URL')}>/Upload/Book/da/<{$vo.upload_img}>" /></a>
+           </div>
+      </volist>
+    </div>
+  </div>
+
+    <div class="fenlei">
+      <a href="/Stacks/index/type/0/gender/1/vip/3/state/0/click/0/w/0.html"><img src="__PUBLIC__/NewWap/images/a-a-6.png"><h2>男生</h2></a>
+      <a href="/Stacks/index/type/0/gender/2/vip/3/state/0/click/0/w/0.html"><img src="__PUBLIC__/NewWap/images/a-a-7.png"><h2>女生</h2></a>
+      <a href="/Top/index/id/10.html"><img src="__PUBLIC__/NewWap/images/a-a-8.png"><h2>新书</h2></a>
+      <a href="/Sign/index.html"><img src="__PUBLIC__/NewWap/images/a-a-9.png"><h2>签到</h2></a>
+      <div class="clearfix"></div>
+    </div>
+    <div class="cx" style="margin-top: 5%;">
+      <div class="bt">
+        <h2>全站最畅销</h2>
+        <a href="/Top/index/id/1.html">更多&nbsp;&gt;</a>
+        <div class="clearfix"></div>
+      </div>
+      <div class="cxn">
+        <foreach name="rexiao" item="vo"> 
+          <a href="/Books/index/bookid/<{$vo.book_id}>.html">
+            <img src="<{:C('IMG_URL')}>/Upload/Book/zhong/<{$vo.upload_img}>">
+            <p class="book_name_p1"><{$vo.book_name}></p>
+          </a>
+        </foreach>
+        <div class="clearfix"></div>
+      </div>
+    </div>
+    <div class="xh"></div>
+    <div class="ns">
+      <div class="bt">
+        <h2>男生最当红</h2>
+        <a href="/Top/index/id/2.html">更多&nbsp;&gt;</a>
+        <div class="clearfix"></div>
+      </div>
+      <div class="nsn">
+        <volist name="manhot" id="vo">
+          <if condition="$key eq 0">
+            <a href="/Books/index/bookid/<{$vo.book_id}>.html" class="nsn1">
+              <img src="/Upload/Book/zhong/<{$vo.upload_img}>">
+              <h2>
+                <span style="font-size: 15px;color: #666666;"><{$vo.book_name}></span>
+                <p class="book_name_p3"><{$vo.book_brief}></p>
+              </h2>
+            </a>
+            <div class="clearfix"></div>
+            <else />
+            <div class="nsn2">
+                <div class="xh"></div>
+                <p class="book_name_p2"><a href="/Books/index/bookid/<{$vo.book_id}>.html"><{$vo.book_name}></a></p>
+              <div class="clearfix"></div>
+            </div>
+          </if>
+        </volist>
+      </div>
+    </div>
+
+    <div class="xh"></div>
+    <div class="ns">
+      <div class="bt">
+        <h1></h1>
+        <h2>女生最言情</h2>
+        <a href="/Top/index/id/3.html">更多&nbsp;&gt;</a>
+        <div class="clearfix"></div>
+      </div>
+      <div class="nsn">
+        <volist name="womanhot" id="vo">
+          <if condition="$key eq 0">
+            <a href="/Books/index/bookid/<{$vo.book_id}>.html" class="nsn1">
+              <img src="/Upload/Book/zhong/<{$vo.upload_img}>">
+              <h2>
+                <span style="font-size: 15px;color: #666666;"><{$vo.book_name}></span>
+                <p class="book_name_p3"><{$vo.book_brief}></p>
+              </h2>
+            </a>
+            <div class="clearfix"></div>
+            <else />
+            <div class="nsn2">
+                <div class="xh"></div>
+                <p class="book_name_p2"><a href="/Books/index/bookid/<{$vo.book_id}>.html"><{$vo.book_name}></a></p>
+              <div class="clearfix"></div>
+            </div>
+          </if>
+        </volist>
+      </div>
+    </div>
+    <div class="xh"></div>
+    <div class="wj">
+      <div class="bt1">
+        <h2>完结大推荐</h2>
+        <a href="/Top/index/id/4.html">更多&nbsp;&gt;</a>
+        <div class="clearfix"></div>
+      </div>
+      <div class="wjbox">
+        <div class="cxn">
+        <volist name="list3" id="vo">
+          <if condition="$i lt 4">
+          <a href="/Books/index/bookid/<{$vo.book_id}>.html">
+            <img src="/Upload/Book/zhong/<{$vo.upload_img}>">
+            <p class="book_name_p1"><{$vo.book_name}></p>
+          </a>
+         <else />
+            <div class="clearfix"></div>
+            <div class="xh"></div>
+            <p class="book_name_p2"><a href="/Books/index/bookid/<{$vo.book_id}>.html"><{$vo.book_name}></a></p>
+        </if>
+        </volist>
+      </div>
+      </div>
+    </div>
+    <div class="xh"></div>
+    <div class="wj">
+      <div class="bt1">
+        <h2>猜你喜欢</h2>
+        <div class="clearfix"></div>
+      </div>
+      <div class="wjbox">
+      <div class="cxn">
+        <volist name="res" id="vo">
+          <if condition="$i lt 4">
+          <a href="/Books/index/bookid/<{$vo.book_id}>.html">
+            <img src="/Upload/Book/zhong/<{$vo.upload_img}>">
+            <p class="book_name_p1"><{$vo.book_name}></p>
+          </a>
+         <else />
+            <div class="clearfix"></div>
+            <div class="xh"></div>
+            <p class="book_name_p2"><a href="/Books/index/bookid/<{$vo.book_id}>.html"><{$vo.book_name}></a></p>
+        </if>
+        </volist>
+      </div>
+      </div>
+    </div>
+    <div class="xh"></div>
+    <div class="bangdan" style="margin-top: 2%;">
+      <ul>
+        <li class="bianse">新书榜</li>
+        <li class="">推荐榜</li>
+        <li class="">钻石榜</li>
+        <div class="clearfix"></div>
+      </ul>
+      <dl>
+      <volist name="newbooks" id="vo" key="k">
+        <dd><a href="/Books/index/bookid/<{$vo.book_id}>.html"><h1><{$k}></h1><h2><{$vo.book_name}></h2></a></dd>
+        <div class="clearfix bbg"></div>
+      </volist>
+      </dl>
+      <dl>
+      <volist name="tj" id="vo" key="k">
+        <dd><a href="/Books/index/bookid/<{$vo.book_id}>.html"><h1><{$k}></h1><h2><{$vo.book_name}></h2></a></dd>
+        <div class="clearfix bbg"></div>
+      </volist>
+      </dl>
+      <dl>
+      <volist name="diamond" id="vo" key="k">
+        <dd><a href="/Books/index/bookid/<{$vo.book_id}>.html"><h1><{$k}></h1><h2><{$vo.book_name}></h2></a></dd>
+        <div class="clearfix bbg"></div>
+      </volist>
+      </dl>
+      <script>
+        $(".bangdan dl").hide()
+        $(".bangdan dl").eq(0).show()
+        $(".bangdan li").click(function(){
+          $(".bangdan dl").hide()
+          var q=$(this).index()
+          $(".bangdan dl").eq(q).show()
+          $(this).addClass("bianse")
+          $(this).siblings().removeClass("bianse")
+        })
+      </script>
+    </div>
+    <include file="/NewWap/Index:bot" />
+    </div>
+</body>
+</html>
+<script>
+$(function(){
+        $('#homeSlide').slick({
+            arrows: false,
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 5000
+        });
+});
+</script>

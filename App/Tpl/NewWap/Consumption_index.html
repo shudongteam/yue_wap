@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>消费记录</title>
+<link rel="shortcut icon" href="__PUBLIC__/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<link href="__PUBLIC__/<{$website.preload}>/style1.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+</head>
+<body>
+  <div class="all">
+<include file="Header:back" />
+<div id="box">
+  <div class="con_tishi">
+  <div class="con_tishi_title">消费记录</div>
+    <ul class="list">
+     <volist name="xiaofei" id="vo">
+      <li>
+        <p class="name"><php>echo str_replace('够买', '购买', $vo['dosomething'])</php></p>
+        <p class="jiage">消费：<{$vo.money}> 阅读币 时间：<{$vo.time}> </p>
+      </li>
+     </volist>
+    </ul>
+   <div class="pager"><{$page}></div>
+  </div>
+</div>
+<include file="/NewWap/Index:bot" />
+</div>
+</body>
+</html>

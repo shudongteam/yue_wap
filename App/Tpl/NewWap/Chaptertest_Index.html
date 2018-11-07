@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$content[title]}>_<{$books.book_name}>-<{$website.web_name}></title>
+<meta name="keywords" content="<{$content[title]}>,<{$books.book_name}>,<{$website.web_name}>" />
+<meta name="description" content="<{$books.book_name}>小说由作者：<{$user.pen_name}>原创,是难得一见的好书,在<{$website.web_name}>全面连载!欢迎大家免费收看:<{$content[title]}>" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<link href="__PUBLIC__/<{$website.preload}>/reading.css" type="text/css" rel="stylesheet" />
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/<{$website.preload}>/jquery-confirm.css">
+<link href="__PUBLIC__/<{$website.preload}>/ds.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery-confirm.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/layer/layer.js"></script>
+<script type="text/javascript" src="__PUBLIC__/<{$website.preload}>/js/detail.js"></script>
+<script type="text/javascript" src="__PUBLIC__/<{$website.preload}>/js/reading.js"></script>
+<script type="text/javascript">
+$(function () {
+    var booksname="<{$books.book_name}>";
+    var art_title = "<{$content[title]}>";
+    var art_url = '/chapter/<{$books.book_id}>/<{$content['num']}>.html';
+    $.cookie("history", "{title:\""+booksname +":"+ art_title + "\""+",url:\"" + art_url + "\"}", {expires: 7, path: '/'});
+});
+
+ </script>
+</head>
+<style type="text/css">
+  li {
+    overflow: hidden;
+    white-space: nowrap;
+  }
+</style>
+<body style="display: block;">
+<div class="all2">
+  <div class="top2">
+    <div class="top3"> <a href="/"><img src="__PUBLIC__/NewWap/images/d-a-2.png"></a>
+      <!-- <h2> <a href="/Books/index/bookid/<{$books.book_id}>"><{$books.book_name}></a>&gt;<{$content[title]}></h2> -->
+      <h2 class="y_book_name"><{$books.book_name}></h2>
+      <div class="clearfix"></div>
+    </div>
+   <!--  <a href="/Bookcase/index/r/0.html" class="shujia"> <img src="__PUBLIC__/NewWap/images/d-a-3.png">
+    <h3>书架</h3>
+    <div class="clearfix"></div>
+    </a> -->
+    <div class="clearfix"></div>
+  </div>
+  <div class="yuedu">
+    <h1  class="y_title"><{$content[title]}></h1>
+    <div class="content juzhong"><p><{$content[content]}></p></div>
+    <div class="clearfix"></div>
+  </div>
+
+  <div class="p_button">
+    <div class="p_button_dashang"><span><img src="__PUBLIC__/NewWap/images/dsicon.png" width="50" height="50" class="p_dashang_img"></span><span class="p_dashang">打赏作者</span></div>
+    <a class="p_button_prev" href="/chapter/<{$books.book_id}>/<{$chapterinfo['preid']}>.html<{$focus}>" >上一章</a>
+    <a class="p_button_next" href="/chapter/<{$books.book_id}>/<{$chapterinfo['nextid']}>.html<{$focus}>" >下一章</a>
+    <div class="p_button_bottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+  </div>
+  <div class="t_menu">
+    <div class="t_menu_font">
+      <span>字号</span>
+      <span class="font_reduce">A-</span>
+      <span class="font_size">19</span>
+      <span class="font_add">A+</span>
+      <span class="font_default">默认</span>
+    </div>
+    <div class="t_menu_bg">
+      <span class="beij">背景</span>
+      <span class="beij_01">&nbsp;&nbsp;</span>
+      <span class="beij_02">&nbsp;&nbsp;</span>
+      <span class="beij_03">&nbsp;&nbsp;</span>
+      <span class="beij_04">&nbsp;&nbsp;</span>
+      <span class="beij_05">&nbsp;&nbsp;</span>
+    </div>
+    <div class="t_menu_detail">
+      <span class="detail_syz" onclick="javascript:window.location.href='/chapter/<{$books.book_id}>/<{$chapterinfo[preid]}>.html<{$focus}>'">上一章</span>
+      <span class="detail_mulu" onclick="javascript:window.location.href='/showclist/<{$books.book_id}>.html'">目录</span>
+      <span class="detail_index" onclick="javascript:window.location.href='/'">首页</span>
+      <span class="detail_yz">夜间</span>
+      <span class="detail_xyz" onclick="javascript:window.location.href='/chapter/<{$books.book_id}>/<{$chapterinfo[nextid]}>.html<{$focus}>'">下一章</span>
+    </div>
+  </div>
+
+  <input name="bookid" id="bookid" type="hidden" value="<{$books.book_id}>" />
+  <input name="preid" id="preid" type="hidden" value="/chapter/<{$books.book_id}>/<{$chapterinfo['preid']}>.html" />
+  <input type="hidden" name="uid" id="uid" value="<{$_COOKIE['user_id']}>">
+  <input type="hidden" name="bookname" id="bookname" value="<{$books.book_name}>">
+  <input type="hidden" name="type" id="type" value="1" />
+
+  <if condition="$chapterinfo['nextid'] gt 21">
+  <div class="tuijian">
+    <div class="bt">
+      <h1></h1>
+      <h2>作者推荐</h2>
+      <div class="clearfix"></div>
+    </div>
+    <div class="tuijianbox">
+       <volist name="haoshu"  id="vo">
+      <li><a href="/books/<{$vo.book_id}>.html"><span>[大家都在看]</span>&nbsp;<{$vo.book_brief}></a></li>
+      </volist>
+    </div>
+  </div>
+  </if>
+  <gt name="alance" value="0">
+  <script type="text/javascript">
+    $(function(){
+        $.alert({
+          title: '签到成功',
+          content: '恭喜您获得<font color="green">&nbsp;<b><{$alance}></b></font>&nbsp;阅读币',
+          confirmButton: '确定',
+          confirmButtonClass: 'btn-info',
+          animation: 'bottom',
+          icon: 'fa fa-check',
+          // backgroundDismiss: true
+        }); 
+    })
+  </script>
+  </gt>
+</div>
+<div class="c_middle"></div>
+</body>
+</html>

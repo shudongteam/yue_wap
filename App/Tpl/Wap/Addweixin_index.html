@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>关注我们</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+</head>
+<body>
+<header class="headers">
+  <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title">关注我们</div>
+  <a href="/">
+  <div class="home"><span></span></div>
+  </a> </header>
+<div id="box">
+  <div class="con_tishi">
+    <div class="ewm">
+      <p class="red">扫码关注</p>
+      <img src="/Upload/code/<{$website.web_id}>.jpg">
+      <p>根据手机提示操作</p>
+    </div>
+  </div>
+  <div class="con_tishi">
+    <div class="con_tishi_title">操作提示</div>
+    <div class="warm_prompt">
+      <p class="info">方法1：长按图片 >> 保存到手机 >> 打开微信扫一扫 >> 相册 >> 扫描二维码。</p>
+      <p class="info">方法2：打开微信搜索“<{$website.weixin}>”加好友或关注公众号。</p>
+      <p class="info">打开微信搜索“<{$website.weixin}>”加好友或关注公众号。</p>
+    </div>
+  </div>
+</div>
+<include file="Index:bot" /> 
+</body>
+</html>

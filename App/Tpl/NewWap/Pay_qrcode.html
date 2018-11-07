@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>扫码支付</title>
+<link rel="shortcut icon" href="__PUBLIC__/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/NewWap/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+</head>
+<body>
+  <div class="all">
+    <include file="Header:back" />
+    <div class="wxew">
+      <h1>充值金额：<span style="color:#07b1a6;"><{$money}></span>元</h1>
+      <h2><img src="<{$code_url}>"></h2>
+      <h3>过期后请刷新页面重新获取二维码</h3>
+      <h4><img src="__PUBLIC__/NewWap/images/h5.png"></h4>
+      <h5><img src="__PUBLIC__/NewWap/images/h6.png"></h5>
+      <h6>温馨提示：
+        <p>
+        请保存二维码图片（或截屏）使用微信扫一扫功能→相册→扫描二维码付款
+        </p>
+      </h6>
+    </div>
+  </div>
+<script type="text/javascript">
+//setInterval("showTime()", 3000);
+function showTime()
+{
+  $.ajax({
+      url: "/Pay/jiance/?payurl=<{$payurl}>",
+      success: function (data) {
+          if(data==2){
+          window.location.href="<{$chenggong}>";
+          }
+      }
+  });
+}
+</script>    
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title><{$website.web_name}>_没有章节了</title>
+<link rel="shortcut icon" href="Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/Wap/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+</head>
+<body>
+<include file="Index:top" />
+<div id="box">
+  <div class="search-box">
+    <form action="/Select/index.html"  method="post" >
+      <input type="text" id="searchInput" name="bookname" placeholder="输入关键字"/>
+      <input type="submit" id="searchBtn" value="搜索"/>
+    </form>
+  </div>
+  <div class="wrap-content">
+    <div class="wrap-content-title">
+      <div>没有章节了看看别的吧！</div>
+    </div>
+    <ul class="like-list">
+        <volist name="meiyou" id="vo">
+      <li> <a href="/Books/<{$vo.book_id}>.html"><img src="/Upload/Book/zhong/<{$vo.upload_img}>" alt="<{$vo.book_name}>"/></a>
+        <p> <a href="/Books/<{$vo.book_id}>.html"><{$vo.book_name}></a> </p>
+      </li>
+        </volist>
+    </ul>
+  </div>
+</div>
+<include file="Index:bot" />
+</body>
+</html>

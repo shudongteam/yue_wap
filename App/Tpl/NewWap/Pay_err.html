@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>充值失败</title>
+<link rel="shortcut icon" href="__PUBLIC__/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/NewWap/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+  $(function () {
+    if ($.cookie("history") != null) {
+        var json = eval("(" + $.cookie("history") + ")");
+        // var shuzu = "<a href=\"" + json.url + "\">" + json.title + "</a>";
+        $("#last_read").attr({
+          href: json.url
+        });
+    }
+});
+</script>
+</head>
+<body>
+  <div class="all">
+    <div class="top4">
+      <a href="/Pay/index.html" class="fanhui"><img src="__PUBLIC__/NewWap/images/e-a-1.png"></a>
+      <a href="/" class="backhome" title="首页" style="float: right;"><img src="__PUBLIC__/NewWap/images/e-a-3.png" ></a>
+      <div class="tixing1" style="width: 68%"><{$title}></div>
+      <div class="top48" style="width: 11%;float: right;">
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="cg">
+      <div class="cg1">
+        <img src="__PUBLIC__/NewWap/images/h2.png">
+      </div>
+      <div class="cg5">
+        <h3>如您遇到支付失败或其他问题</h3>
+        <h4>请联系客服( QQ：<{$website.qq}>）</h4>
+      </div>
+    </div>
+  </div>  
+</body>
+</html>

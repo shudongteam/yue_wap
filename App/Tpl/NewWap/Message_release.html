@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title><{$books.book_name}>-发表评论</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style1.css" type="text/css" rel="stylesheet" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/detail.js"></script>
+</head>
+<body>
+<div class="all"> 
+<header class="headers">
+    <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title"><{$books.book_name}></div>
+  <a href="/">
+  <div class="home"><span></span></div>
+  </a> </header>
+<div id="box">
+  <div class="con_tishi">
+    <div class="con_tishi_title">写《<{$books.book_name}>》的评论</div>
+  <div class="reply-wrap">
+    <div class="reply-content">
+        <input class="comment-input" type="text" name="title" id="title" placeholder="请输入标题" style="margin-bottom: 10px;">
+      <textarea name="content" id="content" class="reply-textarea" placeholder="请输入内容..."></textarea>
+    </div>
+     <input type="submit" value="发表" class="btn01" id="submits" /><input name="bookid" id="bookid" type="hidden" value="<{$books.book_id}>" />
+  </div>
+  </div>
+</div>
+    <include file="Index:bot" /> 
+</div>
+</body>
+</html>

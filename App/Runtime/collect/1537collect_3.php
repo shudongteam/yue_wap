@@ -1,0 +1,1 @@
+<?php	return array ( 'book_id' => '3', 'book_name' => '秘密', 'title' => '第二章、', 'chapter' => '2', );?>

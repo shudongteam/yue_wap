@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>作品打赏-<{$website.web_name}></title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/detail.js"></script>
+</head>
+<body>
+<header class="headers">
+    <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title">作品打赏</div>
+  <a href="/">
+  <div class="home"><span></span></div>
+  </a> </header>
+<div id="box">
+  <div class="con_tishi">
+	<div class="con_tishi_title">温馨提示</div>
+<div class="mod-content">
+        <div class="user-list">
+            <a href="javascript:;" class="user-list-item on" id="1"> <span class="img"> <img src="/Public/Gift/jinbi.png"> </span> <span class="number">金币</span><span class="number">100阅读币</span> </a>
+            <a href="javascript:;" class="user-list-item" id="2"> <span class="img"> <img src="/Public/Gift/hongjiu.png"> </span> <span class="number">红酒</span> <span class="number">200阅读币</span></a>
+            <a href="javascript:;" class="user-list-item" id="3"> <span class="img"> <img src="/Public/Gift/dangao.png"> </span> <span class="number">蛋糕</span> <span class="number">500阅读币</span></a>
+            <a href="javascript:;" class="user-list-item" id="4"> <span class="img"> <img src="/Public/Gift/qiche.png"> </span> <span class="number">汽车</span> <span class="number">1000阅读币</span></a>
+            <a href="javascript:;" class="user-list-item" id="5"> <span class="img"> <img src="/Public/Gift/feiji.png"> </span> <span class="number">飞机</span> <span class="number">5000阅读币</span></a> 
+            <a href="javascript:;" class="user-list-item" id="6"> <span class="img"> <img src="/Public/Gift/tianshi.png"> </span> <span class="number">天使</span><span class="number">10000阅读币</span> </a>
+        </div>
+        <div class="clear"></div>
+        <div class="supportform">
+          <div class="mt15">
+            <label>捧场数量：</label>
+            <div class="textbox" style="width:90px">
+              <!--   -->
+              <input type="number" class="num-text" value="1" name="num" id="num" min="1" onkeyup="this.value=this.value.replace(/\D/g,'');this.value=this.value.replace(/^[0|.]*/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'');this.value=this.value.replace(/^[0|.]*/g,'')"/>
+            </div>
+          </div>
+          <div class="mt15">
+            <label>捧场赠言：</label>
+            <div class="textbox" style="margin-bottom: 10px;">
+              <textarea rows="4" placeholder="支持作者文思泉涌，妙笔生花。" class="support-text" id="message" name="message"></textarea>
+            </div>
+            <input type="submit" value="确认打赏" class="btn01" id="dashang" />
+            <input type="hidden" name="cpi" id="cpi" value="1" />
+            <input type="hidden" name="book" id="book" value="<{$book}>" />
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+<include file="Index:bot" />
+</body>
+</html>

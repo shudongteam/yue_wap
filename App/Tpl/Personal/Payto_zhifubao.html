@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>支付宝充值提示</title>
+<link rel="shortcut icon" href="__PUBLIC__/Wap/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/Wap/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+</head>
+<body>
+<header class="headers">
+    <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title">支付宝充值提示</div>
+ </header>
+<div id="box">
+  <div class="con_tishi">
+	<div class="con_tishi_title">本次充值：<font color="red"><{$issc.readmoney}></font> 阅读币</div>
+	<div class="warm_prompt">
+                <p class="info">系统检测到当前环境不支持支付宝支付</p>
+		<p class="info">请选用以下方式进行处理</p>
+		<p class="info"><{$issc.tishi}></p>
+                <p class="info"><b>方法二:</b><a href="/Personal/Pay/index.html" style="color: blue;text-decoration: underline;">点击选择其他充值方法！</a></p>
+	</div>
+</div>
+</div>
+<script type="text/javascript">
+setInterval("showTime()", 3000);
+function showTime()
+{
+              $.ajax({
+                url: "/Personal/Pay/payresult/trade/<{$issc[trade]}>",
+                success: function (data) {
+                    if(data==2){
+                    window.location.href="/Personal/Payto/zhifubaook.html?out_trade_no=<{$issc[trade]}>";
+                    }
+                }
+            });
+
+}
+</script>       
+</body>
+</html>

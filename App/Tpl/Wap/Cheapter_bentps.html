@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title><{$content[title]}>_<{$books.book_name}>-<{$website.web_name}></title>
+<meta name="keywords" content="<{$content[title]}>,<{$books.book_name}>,<{$website.web_name}>" />
+<meta name="description" content="<{$books.book_name}>小说由作者：<{$user.pen_name}>原创,是难得一见的好书,在<{$website.web_name}>全面连载!欢迎大家免费收看:<{$content[title]}>" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/<{$website.preload}>/jquery-confirm.css">
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery-confirm.js"></script>
+</head>
+<body>
+  <script type="text/javascript">
+    $(function(){
+        $.confirm({
+          title: '阅读提示',
+          content: '《<{$books.book_name}>》是按本收费书籍，价格为：<font color="green">&nbsp;<b><{$books.money}></b></font>&nbsp;阅读币，是否确定购买？',
+          confirmButton: '确定',
+          confirmButtonClass: 'btn-info',
+          cancelButton: '取消',
+          cancelButtonClass: 'btn-danger',
+          animation: 'bottom',
+          icon: 'fa fa-check',
+          confirm: function(){
+            var num = <{$chapterinfo.nextid}>-1;
+            window.location.href = '/chapter/<{$books.book_id}>/'+num+'.html?anben=1';
+          },
+          cancel: function(){
+            history.go(-1);
+          }
+          // backgroundDismiss: true
+        }); 
+    })
+  </script>
+</body>
+</html>

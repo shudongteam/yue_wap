@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title><{$website.web_name}>_原创小说网</title>
+<meta name="keywords" content="<{$website.web_name}>,小说网,原创小说网"/>
+<meta name="description" content="<{$website.web_name}>,最热门的免费小说网站,提供武侠仙侠,奇幻玄幻,科幻灵异,都市言情,穿越女频,青春校园,历史军事,网游竞技,职业官场等网络热门的书籍下载跟阅读！"/>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/slick.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+</head>
+<body>
+<include file="Index:top" />
+<div id="box">
+  <div class="recently_read"><span>没有阅读记录</span></div>
+<div id="banner-swap">
+    <div class="slide-con" id="homeSlide">
+        <!-- <div class="slick-slide"> <a href="/Personal/Payactive/index.html" class="active"> <img src="/Upload/cover/spring.jpg" /> </a> </div> -->
+      <volist name="slide" id="vo">
+          <div class="slick-slide"> <a href="/books/<{$vo.book_id}>.html" class="active"> <img src="<{:C('IMG_URL')}>/Upload/Book/da/<{$vo.upload_img}>" /> </a> </div>
+      </volist>
+    </div>
+  </div>
+  
+    <div class="read"> 
+      <a href="/Stacks/index/type/0/gender/1/vip/3/state/0/click/1.html" class="read-sorts">
+      <div class="icon-sorts"><i class="boy"></i></div>
+      <span>男生</span> </a>
+      <a href="/Stacks/index/type/0/gender/2/vip/3/state/0/click/1.html" class="read-sorts">
+      <div class="icon-sorts"><i class="girl"></i></div>
+      <span>女生</span> </a> 
+      <a href="/Top/index/id/9.html" class="read-sorts">
+      <div class="icon-sorts"><i class="xs"></i></div>
+      <span>新书</span> </a> 
+      <a href="/Top/index/id/10.html" class="read-sorts">
+      <div class="icon-sorts"><i class="xm"></i></div>
+      <span>限免</span> </a> 
+    </div>
+
+<div class="wrap-content">
+  <div class="wrap-content-title">
+    <div>热门推荐</div>
+  </div>
+  <ul class="result-set">
+    <volist name="hots"  id="vo"> 
+    <li class="result-set-item">
+      <div class="result-set-item-top"> <a href="/books/<{$vo.book_id}>.html"> <img src="<{:C('IMG_URL')}>/Upload/Book/zhong/<{$vo.upload_img}>" class="searchset-img"/>
+        <dl>
+          <dd class="result-set-title"><{$vo.book_name}></dd>
+          <dd class="result-set-author">作者：<{$vo.author_name}></dd>
+          <dd class="result-set-auther"> <{$vo.book_brief}>…… </dd>
+        </dl>
+        </a> </div>
+    </li>
+    </volist> 
+  </ul>
+</div>
+<div class="wrap-content">
+  <div class="wrap-content-title">
+    <div>潜力新作</div>
+  </div>
+  <ul class="like-list">
+    <volist name="qianli"  id="vo" offset="0" length='3'> 
+    <li> <a href="/books/<{$vo.book_id}>.html"><img src="<{:C('IMG_URL')}>/Upload/Book/zhong/<{$vo.upload_img}>"/></a>
+      <p> <a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a> </p>
+    </li>
+    </volist> 
+  </ul>
+  <ul class="results-set">
+    <volist name="qianli"  id="vo" offset="3" length='5'> 
+    <li class="result-set-item"> <span class="categories-label"><{$vo.book_type}></span> |<span class="tj-book-name"><a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a></span> </li>
+    </volist>
+  </ul>
+</div>
+<div class="banner"><a href="<{$ban.link}>"><img src="<{:C('IMG_URL')}>/Upload/Ban/<{$ban.pic}>"  /></a></div>
+ <div class="wrap-content">
+    <div class="wrap-content-title">
+      <div>热销专区</div>
+    </div>
+     <ul class="result-set">
+      <li class="result-set-item">
+        <div class="result-set-item-top"> <a href="/books/<{$rexiao[0].book_id}>.html"> <img src="<{:C('IMG_URL')}>/Upload/Book/zhong/<{$rexiao[0].upload_img}>" class="searchset-img"/>
+          <dl>
+            <dd class="result-set-title"><{$rexiao[0].book_name}></dd>
+            <dd class="result-set-author">作者：<{$rexiao[0].author_name}></dd>
+            <dd class="result-set-auther"> <{$rexiao[0].book_brief}>…… </dd>
+          </dl>
+          </a> </div>
+      </li>
+        </ul>
+  <ul class="results-set">
+    <volist name="rexiao"  id="vo" offset="1" length='4'> 
+    <li class="result-set-item"> <span class="categories-label"><{$vo.book_type}></span> |<span class="tj-book-name"><a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a></span> </li>
+     </volist> 
+  </ul>
+  </div>
+
+ <div class="wrap-content">
+    <div class="wrap-content-title">
+      <div>精品推荐</div>
+    </div>
+     <ul class="result-set">
+      <li class="result-set-item">
+        <div class="result-set-item-top"> <a href="/books/<{$jingpin[0].book_id}>.html"> <img src="/Upload/Book/zhong/<{$jingpin[0].upload_img}>" class="searchset-img"/>
+          <dl>
+            <dd class="result-set-title"><{$jingpin[0].book_name}></dd>
+            <dd class="result-set-author">作者：<{$jingpin[0].author_name}></dd>
+            <dd class="result-set-auther"> <{$jingpin[0].book_brief}>…… </dd>
+          </dl>
+          </a></div>
+      </li>
+        </ul>
+  <ul class="results-set">
+    <volist name="jingpin"  id="vo" offset="1" length='4'> 
+    <li class="result-set-item"> <span class="categories-label"><{$vo.book_type}></span> |<span class="tj-book-name"><a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a></span> </li>
+     </volist> 
+  </ul>
+  </div>
+
+
+</div>
+<include file="Index:bot" />
+</body>
+<script>
+$(function(){
+        $('#homeSlide').slick({
+            arrows: false,
+            dots: true,
+            autoplay: true,
+            autoplaySpeed: 3000
+        });
+});
+</script>
+</html>

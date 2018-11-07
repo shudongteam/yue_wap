@@ -1,0 +1,16 @@
+<?php $website=array (
+  'master_id' => '29',
+  'web_id' => '29',
+  'web_name' => '品书风格',
+  'webphone' => '15952022287',
+  'qq' => '965490571',
+  'automatic' => '1',
+  'weixin' => 'https://wx3.sinaimg.cn/mw690/006Zrgzsgy1fmxmlsgytpj3076076aaj.jpg',
+  'web_url' => 'wap29.nw.kyueyun.com',
+  'all_ps' => 'hezuo',
+  'login_url' => 'm.kyueyun.com',
+  'preload' => 'NewWap',
+  'beian' => '赣ICP备18001577号-2',
+  'wx_id' => 'wxbbd3b017b3e18d83',
+  'wx_secret' => '89c98fc18b2779a1313ef1c710c5e3df',
+);

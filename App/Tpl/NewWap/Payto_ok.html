@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>充值成功</title>
+<link rel="shortcut icon" href="__PUBLIC__/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<!-- <script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script> -->
+<script type="text/javascript">
+  $(function () {
+    if ($.cookie("history") != null) {
+        var json = eval("(" + $.cookie("history") + ")");
+        // var shuzu = "<a href=\"" + json.url + "\">" + json.title + "</a>";
+        $("#last_read").attr({
+          href: json.url
+        });
+    }
+});
+</script>
+</head>
+<body>
+<header class="headers">
+    <div class="goback"><a href="/Pay/index.html"></a></div>
+  <div class="head-title">充值成功</div>
+</header>
+<div id="box">
+    <!-- <div class="recently_read" style="margin-bottom: 10px;"><span>没有阅读记录</span></div> -->
+  <div class="con_tishi">
+      <eq name="is_members" value="0"><div class="con_tishi_title">本次充值：<b><{$readmoney}></b> 阅读币现已到帐</div></eq>
+	<div class="warm_prompt">
+    <p class="info"><a href="#" id="last_read" style="color: red;font-size: 1.2rem;">点我继续阅读</a></p>
+		<!-- <p class="info">想要观看原来的章节请点击上面的阅读记录哦</p> -->
+		<p class="info"><a href="/Bookcase/index.html" style="color: red;font-size: 1.2rem;">返回书架</a></p>
+	</div>
+</div>
+</div>
+</body>
+</html>

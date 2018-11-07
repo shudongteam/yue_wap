@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+setInterval("showTime()", 3000);
+function showTime()
+{
+  $.ajax({
+      url: "/Pay/payresult?trade=<{$trade}>",
+      success: function (data) {
+          if(data==2){
+          window.location.href="<{$chenggong}>";
+          }
+      }
+  });
+}
+</script>
+</body>
+</html>

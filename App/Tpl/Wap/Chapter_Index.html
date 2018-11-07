@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title><{$content[title]}>_<{$books.book_name}>-<{$website.web_name}></title>
+<meta name="keywords" content="<{$content[title]}>,<{$books.book_name}>,<{$website.web_name}>" />
+<meta name="description" content="<{$books.book_name}>小说由作者：<{$user.pen_name}>原创,是难得一见的好书,在<{$website.web_name}>全面连载!欢迎大家免费收看:<{$content[title]}>" />
+<link href="__PUBLIC__/<{$website.preload}>/reading.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/reading.js"></script>
+<link rel="stylesheet" href="http://libs.baidu.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/<{$website.preload}>/jquery-confirm.css">
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery-confirm.js"></script>
+<script type="text/javascript">
+    var booksname="<{$books.book_name}>";
+    var art_title = "<{$content[title]}>";
+    var art_url = '/chapter/<{$books.book_id}>/<{$content['num']}>.html';
+    $.cookie("history", "{title:\""+booksname +":"+ art_title + "\""+",url:\"" + art_url + "\"}", {expires: 7, path: '/'});
+ </script>
+</head>
+<body>
+<div class="juzhong">
+  <div class="title"><{$content.title}></div>
+  <div class="content">
+ <p><{$content[content]}></p>
+ <if condition="$addweixin==1"><p class="duzhe"><b><a href="/Addweixin/index.html">【作者提示】追书不用愁！免费领取阅读币。</a></b></p></if>
+  </div>
+  <div id="caidan">
+  </div>  
+  <table width="100%" class="qiehuan" >
+    <tr>
+      <td width="85%"><a href="/chapter/<{$books.book_id}>/<{$chapterinfo['nextid']}>.html<{$focus}>" >下一章</a></td>
+      <td width="3%">&nbsp;</td>
+      <td width="12%"><a href="javascript:void(0)" id="menu">菜单</a></td>      
+    </tr>
+  </table>
+
+   <!--  <table width="100%" class="qiehuan" style="table-layout:fixed;">
+    <tr >
+      <td width="100%" colspan='3' style="border:0px"><span style="display:block;color:red;text-align:left;height:40px;line-height:40px;font-size:20px;"><b>| 作者推荐:</b></span></td>
+    </tr>
+    <volist name="procheapter"  id="vo" > 
+      <tr >
+      <td width="100%" colspan='3' style="border:0px"><a href="/chapter/<{$vo.book_id}>/1.html" style="text-decoration:none;border:0px;text-align:left;height:40px;line-height:40px;text-overflow: ellipsis;-moz-text-overflow:ellipsis;overflow: hidden;white-space: nowrap;">【大家都在看】:<span style="color:#1C86EE;"><{$vo.book_brief}></span></a></td></a>
+      </tr >
+    </volist> 
+  </table> -->
+
+</div>
+
+  <eq name="activity_red" value="1">
+      <div style=" position: absolute; width: 100%; "><a href="/Personal/Pay/christmas"><img src="/Upload/cover/sd3.gif" width="100%"></a></div>
+      <!-- <div style=" position: absolute; width: 100%; "><a href="/Personal/Activity/red"><img src="/Public/Wap/images/act.gif" width="100%"></a></div> -->
+  </eq>
+    <gt name="alance" value="0">
+  <script type="text/javascript">
+    $(function(){
+        $.alert({
+          title: '签到成功',
+          content: '恭喜您获得<font color="green">&nbsp;<b><{$alance}></b></font>&nbsp;阅读币',
+          confirmButton: '确定',
+          confirmButtonClass: 'btn-info',
+          animation: 'bottom',
+          icon: 'fa fa-check',
+          // backgroundDismiss: true
+        }); 
+    })
+  </script>
+    </gt>
+    <input name="bookid" id="bookid" type="hidden" value="<{$books.book_id}>" />
+    <input name="preid" id="preid" type="hidden" value="/chapter/<{$books.book_id}>/<{$chapterinfo['preid']}>.html<{$focus}>" />
+    <script type="text/javascript" language="javascript" src="__PUBLIC__/Public/js/menus.js"></script>
+</body>
+</html>

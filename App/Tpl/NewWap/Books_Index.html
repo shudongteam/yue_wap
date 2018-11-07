@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <title><{$books.book_name}></title>
+    <meta name="keywords" content="<{$books.book_name}>,<{$books.author_name}>全文阅读,<{$books.book_name}>最新章节" />
+    <meta name="description" content="<{$website.web_name}>提供<{$books.book_name}>乐免费在线阅读下载,包括<{$books.book_name}>最新章节及时更新,<{$books.book_name}>是本站首发小说,欢迎收藏以便下次阅读。" />
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta content="yes" name="apple-mobile-web-app-capable">
+    <meta content="black" name="apple-mobile-web-app-status-bar-style">
+    <meta content="telephone=no" name="format-detection">
+    <link href="__PUBLIC__/Wap/style.css" type="text/css" rel="stylesheet" />
+    <link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+    <script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/<{$website.preload}>/js/detail.js"></script>
+    <script type="text/javascript" src="__PUBLIC__/Public/js/layer/layer.js"></script>
+  </head>
+  <style type="text/css">
+body {background-color: white;} 
+.c_anniu span {width: 30%;float: left;color: white;border: none;margin-top: 2%;text-align: center;width: 70px;font-size: 15px}
+ @media (max-width: 440px){ 
+ 	.top4 li {line-height: 84px;} 
+ 	.mulu2 ul {margin-top: 0;} 
+ 	.mulu2 li {padding-left: 3%;margin-top: 7px;} 
+ }
+  @media (max-width: 375px){ 
+  	.top4 li {line-height: 48px;} 
+  	.mulu2 ul {margin-top: 0;} 
+  	.mulu2 li {padding-left: 3%;margin-top: 7px;} 
+  	.mulu2 li h2 {font-size: 14px;} } 
+.mulu2box {margin-top: 5px;} 
+.jianjie {height: auto;} 
+.jianj {height: 70px;overflow: hidden; text-overflow: ellipsis;} 
+.zijin h2 {font-size: 1.2rem;} 
+#vipvote, #vote {line-height: 3rem;} 
+.changdu {padding-bottom: 3.5rem;} 
+.start {position: fixed;left: 0;bottom: 0;z-index: 1010;line-height: 2.7rem;} 
+.btn01 {background-color: #00a19e;} 
+.con_tishi .con_tishi_title {border-left-color: #00a19e;color: #00a19e;} 
+.user-list .on {border: 1px solid #00a19e;color: #009f78;}</style>
+  
+  <body>
+    <div class="all">
+      <div class="top4">
+        <a href="JavaScript:history.go(-1);" class="fanhui">
+          <img src="__PUBLIC__/NewWap/images/e-a-1.png"></a>
+        <a href="/" class="backhome" title="首页" style="float: right;">
+          <img src="__PUBLIC__/NewWap/images/e-a-3.png"></a>
+        <div class="tixing1" style="width: 58%">书籍详情</div>
+        <div class="top48" style="width: 11%;float: right;">
+          <ul>
+            <li class="top4l" style="border-bottom:none;">
+              <a href="/Bookcase/index/r/0.html" style="color: #FFF">书架</a>
+           	</li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+      </div>
+
+      <div class="jianjie">
+        <div class="jianjie2">
+          <div class="jianjie1" style="width: 25%"><img src="/Upload/Book/zhong/<{$books.upload_img}>"></div>
+          <ul class="c_info" style="width: 72%;margin-left: 3%">
+            <li><h1><{$books.book_name}></h1></li>
+            <li><h2>作者:<{$books.author_name}>&nbsp;&nbsp;&nbsp;类型:<{$books.type_id}></h2></li>
+            <li><h2>字数:<{$books.words}>字</h2></li>
+            <li><h2>状态:<if condition="$books['state']==1">连载中<else />完本</if></h2></li>
+          </ul>
+        </div>
+        <div class="clearfix"></div>
+        <div class="jianj">
+          <h5><{$books.book_brief}></h5>
+        </div>
+        <div class="jianjie_ico" style="text-align: right;">
+          <a style="color: #23dbc5;" href="javascript:;" class="text_spread1">展开▼</a>
+          <a style="color: #23dbc5;display:none;" href="javascript:;" class="text_flod1">收起▲</a>
+        </div>
+      </div>
+
+      <div class="zijin">
+        <li>
+        	<a href="javascript:void(0);show_dashang();">
+        		<img src="__PUBLIC__/NewWap/images/e-a-5.png">
+            	<h2><span id='vipvote'>打赏</span></h2>
+        	</a>
+        </li>
+        <li>
+          	<a href="javascript:void(0);vipvote()">
+            	<img src="__PUBLIC__/NewWap/images/e-a-6.png">
+              	<h2><span id='vote'>阅明珠</span></h2>
+          	</a>
+        </li>
+        <div class="clearfix"></div>
+      </div>
+
+      <input type="hidden" name="uid" id="uid" value="<{$_COOKIE['user_id']}>">
+      <input type="hidden" name="bookid" id="bookid" value="<{$books.book_id}>">
+      <input type="hidden" name="bookname" id="bookname" value="<{$books.book_name}>">
+      <input type="hidden" name="type" id="type" value="1" />
+      
+      <div class="mulu2">
+        <h1>目录</h1>
+        <div class="directory_new" style="display: block;overflow: hidden;white-space: nowrap;">
+          <a style="color: #666666;margin-left: 1%;" href="/chapter/<{$books.book_id}>/<{$books.newcontnet.num}>.html">
+            <span style="border: 1px solid #00a19e;background-color: #00a19e;">最新</span>
+            <{$books.newcontnet.title}>
+              <if condition="$books['newcontnet']['the_price'] neq 0"><b style="color: #00a19e; font-weight: normal;">[vip]</b></if>
+          </a>
+        </div>
+        <ul>
+          <volist name="books.newlinst" id="vo">
+            <li>
+              <a href="/chapter/<{$books.book_id}>/<{$vo.num}>.html">
+                <h2><{$vo.title}></h2>
+                <h5 class="clearfix"></h5>
+              </a>
+            </li>
+          </volist>
+        </ul>
+        <a href="/showclist/<{$books.book_id}>.html" class="mulu2box">查看章节目录</a>
+      </div>
+
+      <div class="xian3"></div>
+      <div class="clearfix"></div>
+      <div class="changdu">
+        <div class="wj">
+          <div class="bt1">
+            <h2>同款推荐</h2>
+            <div class="clearfix"></div>
+          </div>
+          <div class="cxn">
+            <volist name="books[tongkuan]" id="vo" offset="0" length='3'>
+              <a href="/Books/index/bookid/<{$vo.book_id}>.html">
+                <img src="/Upload/Book/zhong/<{$vo.upload_img}>">
+                <h2 style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;"><{$vo.book_name}></h2>
+              </a>
+            </volist>
+            <div class="clearfix"></div>
+          </div>
+        </div>
+      </div>
+      <a class="hong start" href="/chapter/<{$books.book_id}>/1.html">开始阅读</a>
+   </div>
+
+
+    <script type="text/javascript">//展开
+      $(".text_spread1").click(function() {
+        $(".text_spread1").css("display", "none");
+        $(".text_flod1").css("display", "block");
+        $(".jianj").css("height", "auto");
+      });
+      //隐藏
+      $(".text_flod1").click(function() {
+        $(".text_flod1").css("display", "none");
+        $(".text_spread1").css("display", "block");
+        $(".jianj").css("height", "70px");
+      });
+      //打赏遮罩
+      function show_dashang() {
+        layer.open({
+          type: 1,
+          title: ['打赏', 'text-align:center;padding:0;'],
+          offset: 'lb',
+          skin: 'layui-layer-demo',
+          //样式类名
+          closeBtn: 0,
+          //不显示关闭按钮
+          anim: 2,
+          area: '100%',
+          shadeClose: true,
+          //开启遮罩关闭
+      	  content: '<div class="con_tishi"><div class="mod-content"><div class="user-list"><a href="javascript:;"class="user-list-item on"id="1"><span class="img"><img src="/Public/Gift/jinbi.png"></span><span class="number">金币</span><span class="number">100阅读币</span></a><a href="javascript:;"class="user-list-item"id="2"><span class="img"><img src="/Public/Gift/hongjiu.png"></span><span class="number">红酒</span><span class="number">200阅读币</span></a><a href="javascript:;"class="user-list-item"id="3"><span class="img"><img src="/Public/Gift/dangao.png"></span><span class="number">蛋糕</span><span class="number">500阅读币</span></a><a href="javascript:;"class="user-list-item"id="4"><span class="img"><img src="/Public/Gift/qiche.png"></span><span class="number">汽车</span><span class="number">1000阅读币</span></a><a href="javascript:;"class="user-list-item"id="5"><span class="img"><img src="/Public/Gift/feiji.png"></span><span class="number">飞机</span><span class="number">5000阅读币</span></a><a href="javascript:;"class="user-list-item"id="6"><span class="img"><img src="/Public/Gift/tianshi.png"></span><span class="number">天使</span><span class="number">10000阅读币</span></a></div><div class="clear"></div><div class="supportform"><div class="mt15"><input type="submit"value="确认打赏"class="btn01" onclick="dashang()"/></div></div></div></div></div>'
+
+        });
+      }
+    </script>
+    <script type="text/javascript">//查看更多打赏
+      // var dsnum = $(".szsz").text() $(".ckgd button").click(function() {
+      //   var arr = $(".dsjl").children("div");
+      //   var length = arr.length - 1;
+      //   //var dsnum = $(".szsz").text()
+      //   //alert(length)
+      //   if (length < dsnum) {
+      //     $.ajax({
+      //       url: "/Exceptional/addshang/bookid/" + $("#bookid").val() + "/num/" + length,
+      //       type: "post",
+      //       dataType: "Json",
+      //       success: function(data) {
+      //         //console.log(data);
+      //         //alert(data)
+      //         var res = eval("(" + data + ")");
+      //         var str = "";
+      //         $.each(res,
+      //         function(k, v) {
+      //           var img = v['portrait'];
+      //           //alert(img)
+      //           if (img === "portrait") {
+      //             str += "<div>" + "<div class='dsl'>" + "<img class='pic' src='/Upload/upload_portrait/portraita.jpg'>" + "</div>" + "<div class='dsr'>" + "<p>" + v["pen_name"] + "</p>" + "<p>" + v["dosomething"] + "</p>" + "<p>" + v["time"] + "</p>" + "</div>" + "<div class='line1'>" + "</div>" + "</div>";
+      //           } else {
+      //             str += "<div>" + "<div class='dsl'>" + "<img class='pic' src='" + img + "'>" + "</div>" + "<div class='dsr'>" + "<p>" + v["pen_name"] + "</p>" + "<p>" + v["dosomething"] + "</p>" + "<p>" + v["time"] + "</p>" + "</div>" + "<div class='line1'>" + "</div>" + "</div>";
+      //           }
+
+      //         });
+      //         //str+="</div>";
+      //         $(".ckgd").before(str);
+      //       }
+      //     });
+      //   } else {
+      //     $(".ckgd").empty().html("加载完毕") $(".ckgd").css("color", "grey")
+      //   }
+      // })
+    </script>
+  </body>
+
+</html>

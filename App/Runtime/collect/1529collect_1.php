@@ -1,0 +1,1 @@
+<?php	return array ( 'book_id' => '1', 'book_name' => '爱缠绵情如火', 'title' => '第五十一章   大结局', 'chapter' => '45', );?>

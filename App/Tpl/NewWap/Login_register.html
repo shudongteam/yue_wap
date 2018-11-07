@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>账户注册-<{$website.web_name}></title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+</head>
+<body>
+<div class="all">
+    <div class="top4">
+      <a href="javascript:history.back(-1);" class="fanhui"><img src="__PUBLIC__/NewWap/images/e-a-1.png"></a>
+      <div class="tixing1" style="width: 68%;">注册</div>
+      <div class="top4box" style="width: 16%;">
+        <a href="/"><img src="__PUBLIC__/NewWap/images/e-a-3.png"></a>
+        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="zhuce">
+<!--       <div class="zhucetou">
+        <img src="__PUBLIC__/NewWap/images/j-b-6.png" class="zhucetou1">
+        <img src="__PUBLIC__/NewWap/images/j-b-5.png" class="zhucetou2">
+      </div> -->
+      <div class="zhuce1">
+        <h1>基本信息</h1>
+        <input type="text" name="user_name" placeholder="用户名" maxlength="16">
+        <input type="password" name="user_pass" placeholder="密码">
+        <input type="password" name="re_pass" placeholder="重复密码">
+      </div>
+      <input type="button" value="注册" class="zc" id="submit">
+    </div> 
+  </div>
+  <script>
+    $(function(){
+      $('#submit').click(function(){
+        var user_name = $('input[name=user_name]').val();
+        var user_pass = $('input[name=user_pass]').val();
+        var re_pass = $('input[name=re_pass]').val();
+        if (user_name.length < 4 || user_name.length >16) {
+            Toast('账号长度范围在4-16位之间', 1000);
+            return false;
+        }
+        if (user_pass.length < 6) {
+            Toast('密码长度不能小于6位', 1000);
+            return false;
+        }
+        if (user_pass != re_pass) {
+            Toast('两次密码输入不一致', 1000);
+            return false;     
+        }
+
+        $.ajax({
+            url: "/Login/register",
+            type: "post",
+            data: 'user_name=' + user_name + '&user_pass=' + user_pass,
+            success: function (data) {
+                if (data == 1) {
+                    window.location.href = '/';
+                } else {
+                    Toast(data, 1000);
+                }
+            }
+        });
+      });
+    });
+  </script>  
+</body>
+</html>

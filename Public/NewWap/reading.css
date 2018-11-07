@@ -1,0 +1,257 @@
+@charset "utf-8";
+/* CSS Document */
+*, *:before, *:after {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td, hr, button, footer, header, hgroup, menu, nav, section {
+	margin:0;
+	padding:0;
+}
+header, footer, section, article, aside, nav, hgroup, address, figure, figcaption, menu, details {
+	display:block;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+caption, th {
+	text-align:left;
+	font-weight:normal;
+}
+html, body, fieldset, img, iframe, abbr {
+	border:0;
+}
+html {
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+i, em {
+	font-style:normal;
+}
+ol, ul, li {
+	list-style:none;
+}
+h1, h2, h3, h4, h5, h6, small {
+	font-size:100%;
+	font-weight:normal
+}
+textarea {
+	overflow:auto;
+	resize:none;
+}
+label {
+	cursor:default;
+}
+a, button {
+	cursor:pointer;
+}
+a, a:hover {
+	text-decoration:none;
+	color: #5e6471;
+}
+iframe {
+	display: block;
+}
+input[type="submit"] {
+	border:none;
+}
+button, input, select, textarea {
+	font-size: 100%;
+}
+button[disabled], html input[disabled] {
+	cursor: default;
+}
+input[type="checkbox"], input[type="radio"] {
+	padding:0;
+	box-sizing:border-box;
+	vertical-align:-2px;
+	margin:0px 3px 0px 0px;
+	cursor:pointer;
+}
+.inline-block {
+	display: inline-block;
+*display: inline;
+	zoom: 1;
+}
+::-webkit-input-placeholder {
+color:#ababab;
+}
+:-moz-placeholder {
+color:#ababab;
+}
+::-moz-placeholder {
+color:#ababab;
+}
+:-ms-input-placeholder {
+color:#ababab;
+}
+a {
+	outline: none;
+}
+/*整体*/
+body {
+	font-family: "Microsoft YaHei";
+	-webkit-user-select: none;
+	font-size: 14px;
+}
+.juzhong {
+	padding-left:10px;
+	padding-right:10px;
+}
+.title {
+	line-height: 40px;
+	font-weight: bold;
+	color: #666;
+	font-size: 12px;
+}
+.content {
+	padding-bottom: 10px;
+	/*width: 96%;
+	margin:auto;*/
+}
+
+.content p {
+	padding:0.3em 0em;
+	line-height: 1.8em;
+	font-size: 19px;
+	text-indent: 2em;
+	color:#666;
+}
+
+.qiehuan {
+	text-align: center;
+	margin-bottom: 0px;
+}
+.qiehuan a {
+	display:block;
+	height:50px;
+	line-height:50px;
+	text-align:center;
+	/*border: 1px solid #666666;*/
+	border-radius:6px;
+	color: #f5f5f5;
+	position: relative;
+	background-color: #00a19e; 
+}
+/*菜单*/
+.zongcaidan {
+	width:100%;
+	display: none;
+	margin-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+}
+.content_menu {
+	text-align: center;
+	padding-top: 10px;
+}
+.content_menu td {
+	padding-bottom: 10px;
+}
+.content_menushang td {
+	padding-top: 10px;
+}
+.content_menu a {
+	display:block;
+	line-height:30px;
+	text-align:center;
+	border: 1px solid #e2e2e2;
+	border-radius:3px;
+	color: #9b9b9b;
+	background-color: #FFF;
+}
+/*菜单设置*/
+.shezhi {
+	padding-top: 5px;
+	height: 160px;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #e2e2e2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #e2e2e2;
+	margin-bottom: 5px;
+}
+.shezhi span {
+	line-height: 30px;
+	padding-left:10px;
+    color: #9b9b9b;
+}
+.ziti_ziti, .ziti_beijing {
+	height: 40px;
+	color: #515151;
+}
+.ziti_ziti li, .ziti_beijing li {
+	background:#ffffff;
+	color:#9b9b9b;
+	float:left;
+	width:35px;
+	border:2px solid #e2e2e2;
+	text-align:center !important;
+	position:relative;
+	/*line-height: 35px;*/
+	height: 35px;
+	margin-left: 10px;
+}
+.ziti_ziti li.on, .ziti_beijing li.on {
+	border: 2px solid #ff9801;
+}
+.xiao {
+	font-size:16px;
+}
+.zhong {
+	font-size:18px;
+}
+.da {
+	font-size:20px;
+}
+.ziti_beijing .baitian {
+	background-color: #f9f9f9;
+}
+.ziti_beijing .heiye {
+	background-color: #000;
+	color: #FFF;
+}
+.ziti_beijing .moren {
+	background-color: #F4EED9;
+}
+/*微信推广*/
+.wei_box {
+	overflow: hidden;
+	padding-top: 6px;
+	padding-right: 10px;
+	padding-bottom: 5px;
+	padding-left: 10px;
+	margin-top: -10px;
+	background-color: #FFF;
+        display: none;
+}
+.wei_box img {
+	border:0 none;
+	vertical-align:top;
+	float: left;
+	margin:0px 10px 0 0
+}
+.wei_title {
+	font-size:14px;
+	overflow:hidden;
+	color: #666666;
+	line-height:24px
+}
+.wei_fu {
+	font-size:13px
+}
+/*推荐*/
+.duzhe{
+	font-size:16px;
+	color:#FF3333;
+	text-indent: 0!important;
+	text-align: center;
+}
+.tuijian td{
+	padding-left: 10px;
+}
+.tuijian td .biaoti{display:block;color:red;text-align:left;height:40px;line-height:40px;font-size:20px;}
+.tuijian td .biaoti2{text-decoration:none;border:0px;text-align:left;height:40px;line-height:40px;}
+.tuijian td .biaoti2 span{color:#1C86EE;}

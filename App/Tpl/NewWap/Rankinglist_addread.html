@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>排行-订阅榜</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+	<div class="all">
+		<include file="Header:back" />
+		<div class="paihang">
+			<a href="/Rankinglist/click" class="">点击榜</a>
+			<a href="/Rankinglist/addread" class="paihangbian">销售榜</a>
+			<a href="/Rankinglist/tuijian" class="">追书榜</a>
+			<div class="clearfix"></div>
+		</div>
+		<div class="nr">
+			<div class="nr1">
+			<foreach name="dingyue" item="vo">
+				<a href="/Books/index/bookid/<{$vo.book_id}>.html" class="nr2" style="margin-top:27px;">
+					<h1><img src="/Upload/Book/zhong/<{$vo.upload_img}>"></h1>
+					<ul>
+						<li><h2 style="color:#666666"><{$vo.book_name}></h2></li>
+						<li><h3 style="color: #636164">作者：<span><{$vo.author_name}></span></h3><h4 style="color: #636164">类型：<span  style="color:#009f78"><{$vo.type_id|get_type}></span></h4><p class="clearfix"></p></li>
+						<li><h5>最后更新：<{$vo.time}></h5></li>
+						<li><h6 class="overhide" style="color: #848484;">
+                        <{$vo.book_brief|msubstr=0,24}></h6></li>
+					</ul>
+					<dl class="clearfix"></dl>
+				</a>
+			</foreach>
+			</div>
+		</div>
+	</div>	
+</body>
+</html>

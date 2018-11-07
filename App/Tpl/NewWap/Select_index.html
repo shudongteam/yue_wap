@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>搜索_<{$website.web_name}></title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style1.css" type="text/css" rel="stylesheet" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+</head>
+<body>
+<div class="all">
+<include file="/NewWap/Index:top" />
+
+<div id="box">
+  <div class="search-box">
+    <form action="/Select/index.html"  method="post" >
+      <input type="text" id="searchInput" name="bookname" placeholder="输入书名"/>
+      <input type="submit" id="searchBtn" value="搜索"/>
+    </form>
+  </div>
+ <if condition="$sou!=1">   
+   <div class="wrap-content">
+  <div class="wrap-content-title">
+    <div>搜索结果（共<{$shuliang}>条结果）</div>
+  </div>
+  <ul class="result-set">
+    <volist name="jieguo"  id="vo"> 
+    <li class="result-set-item">
+      <div class="result-set-item-top"> <a href="/Books/index/bookid/<{$vo.book_id}>.html"> <img src="/Upload/Book/zhong/<{$vo.upload_img}>" class="searchset-img"/>
+        <dl>
+          <dd class="result-set-title"><{$vo.book_name}></dd>
+          <dd class="result-set-author">作者：<{$vo.author_name}></dd>
+          <dd class="result-set-auther"> <{$vo.book_brief|msubstr=0,24}></dd>
+        </dl>
+        </a> </div>
+    </li>
+    </volist> 
+  </ul>
+  <div class="fanye"><{$page}></div>
+</div>   
+ <else />
+ <div class="con_tishi"><font>请输入超过2个的关键字...</font></div>
+ </if>
+  <div class="wrap-content">
+  <div class="wrap-content-title">
+    <div>热门搜索</div>
+  </div>
+  <ul class="result-set">
+    <volist name="sousuo"  id="vo"> 
+    <li class="result-set-item">
+      <div class="result-set-item-top"> <a href="/Books/index/bookid/<{$vo.book_id}>.html"> <img src="/Upload/Book/zhong/<{$vo.upload_img}>" class="searchset-img"/>
+        <dl>
+          <dd class="result-set-title"><{$vo.book_name}></dd>
+          <dd class="result-set-author">作者：<{$vo.author_name}></dd>
+          <dd class="result-set-auther"> <{$vo.book_brief|msubstr=0,24}></dd>
+        </dl>
+        </a> </div>
+    </li>
+    </volist> 
+  </ul>
+</div>
+</div>
+<include file="/NewWap/Index:bot" />
+</div>
+</body>
+</html>

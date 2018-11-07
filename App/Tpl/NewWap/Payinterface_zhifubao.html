@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>支付宝支付</title>
+<link rel="shortcut icon" href="__PUBLIC__/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/NewWap/style.css" type="text/css" rel="stylesheet" />
+</head>
+<style type="text/css">
+.wxtip{background: rgba(0,0,0,0.8); text-align: center; position: fixed; left:0; top: 0; width: 100%; height: 100%; z-index: 998; display: none;}
+.wxtip-icon{width: 52px; height: 67px; background: url(/Public/Public/images/weixin-tip.png) no-repeat; display: block; position: absolute; right: 20px; top: 10px;}
+.wxtip-icon2{width: 100%; height:220px;margin-top:50px;background: url(/Public/Public/images/notice.png) no-repeat center center; position: absolute;/* right: 20px; top: 20px;*/}
+.wxtip-txt{margin-top: 107px;color: #fff; font-size: 20px; line-height: 1.5;}
+.wxtip-txt2{margin-top: 260px; color: #fff; font-size: 20px; line-height: 1.5;}
+.step2,.step3{
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    background-color: #4CAF50;
+    border: none;
+    color: #FFFFFF;
+    padding: 15px 32px;
+    text-align: center;
+    -webkit-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+   /* margin: 16px 0 !important;*/
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    display:block;margin: 0 auto;
+}
+</style>
+<body>
+  <div class="all">
+    <include file="Header:back" />
+    <div class="wxew">
+      <h1>充值金额：<span style="color:#07b1a6;"><{$money}></span>元</h1>
+      <h6>温馨提示：
+        <p>系统检测到当前环境不支持支付宝支付</p>
+        <p>请选用以下方式进行处理</p>
+        <p><b>方法一:</b><{$tishi}></p>
+        <p class="info"><b>方法二:</b><a href="/Pay/index.html" style="color: blue;text-decoration: underline;">点击选择其他充值方法！</a></p>
+      </h6>
+    </div>
+    <div class="wxtip" id="JweixinTip">
+      <span class="wxtip-icon" id="wxtip-icon"></span>
+      <div class="wxtip-icon2" id="wxtip-icon2" style="display: none;"></div>
+      <p class="wxtip-txt" id="wxtip-txt">点击右上角<br/>选择在浏览器中打开</p>
+      <p class="wxtip-txt2" id="wxtip-txt2" style="display: none;">1.用支付宝支付<br/>2.支付完成，确认付款后可返回微信继续阅读</p>
+      <button class="step2" id="step2" style="margin-top: 50px;">下一步</button>
+      <button class="step3" id="step3" style="display:none;margin-top:50px;margin:0 auto;">我已了解</button>
+    </div>
+    <script type="text/javascript">
+      document.getElementById('JweixinTip').style.display='block';
+
+      // document.getElementById('JweixinTip').onclick=function(){
+      //   this.style.display='none';
+      // }
+      document.getElementById('step2').onclick=function(){
+        document.getElementById('wxtip-txt').style.display='none';
+        this.style.display='none';
+        document.getElementById('wxtip-icon').style.display='none';
+        document.getElementById('wxtip-icon2').style.display='block';
+        document.getElementById('wxtip-txt2').style.display='block';
+        document.getElementById('step3').style.display='block';
+      }
+      document.getElementById('step3').onclick=function(){
+        document.getElementById('JweixinTip').style.display='none';
+      }
+  </script>
+  </div>
+</body>
+</html>

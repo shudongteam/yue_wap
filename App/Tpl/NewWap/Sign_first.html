@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>首冲礼包</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/NewWap/style.css" type="text/css" rel="stylesheet" />
+<link href="__PUBLIC__/Wap/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $(".qiandao").click(function () {
+                $.ajax({
+                    url: "/Sign/first_add.html",
+                    type: "get",
+                    data: 'type=1',
+                    success: function (data) {
+                         if (data == '领取成功!') {
+                            $('.qiandao').attr('src', '/Public/NewWap/images/yilingqu.png');
+                         } else {
+                            alert(data);
+                         }
+                    }
+                });
+        });
+        
+    });
+    
+</script>
+<style type="text/css">
+a, p {
+  color: #666;
+}
+.btn01 {
+    background-color: #00a19e;
+}
+.qiandao {    
+    float: left;
+    /* position: relative; */
+    /* top: 46%; */
+    /* left: 36%; */
+    /* width: 100px; */
+    margin-top: -131%;
+    margin-left: 33%;
+}
+</style>
+</head>
+<body>
+<include file="Header:back" />
+<!-- <div id="box">
+  <div class="con_tishi">
+    <div class="con_tishi_title" style="color: #00a19e;border-left-color: #00a19e;">首冲礼包</div>
+    <div class="warm_prompt">
+      <p class="info">领取500阅读币</p>
+    </div>
+      <table class="control" width="100%">
+      <tr>
+        <td width="100%">  <input type="submit" id="button" class="btn01" value="点击领取"/></td>
+      </tr>
+    </table>
+  </div>
+</div> -->
+<div class="bgt">
+  <img src="/Public/NewWap/images/bgt.jpg" width="100%" style="float: left">
+  <img src="/Public/NewWap/images/lingqu.png" width="100" class="qiandao">
+</div>
+</body>
+</html>

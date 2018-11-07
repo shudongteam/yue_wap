@@ -1,0 +1,108 @@
+
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$content[title]}>_<{$books.book_name}>-<{$website.web_name}></title>
+<meta name="keywords" content="<{$content[title]}>,<{$books.book_name}>,<{$website.web_name}>" />
+<meta name="description" content="<{$books.book_name}>小说由作者：<{$user.pen_name}>原创,是难得一见的好书,在<{$website.web_name}>全面连载!欢迎大家免费收看:<{$content[title]}>" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+$(function () {
+    var booksname="<{$books.book_name}>";
+    var art_title = "<{$content[title]}>";
+    var art_url = '/chapter/<{$books.book_id}>/<{$content['num']}>.html';
+    $.cookie("history", "{title:\""+booksname +":"+ art_title + "\""+",url:\"" + art_url + "\"}", {expires: 7, path: '/'});
+});
+
+ </script>
+ <style type="text/css">
+/*内容提示*/
+.con_tishi {
+	background:#FFF;
+	padding:10px;
+	margin-bottom:10px;
+}
+.con_tishi .con_tishi_title {
+	border-left-width: 2px;
+	border-left-style: solid;
+	border-left-color: #00a19e;
+	line-height: 20px;
+	padding-left: 15px;
+	font-size: 16px;
+	color: #00a19e;
+	margin-bottom: 10px;
+}
+.con_tishi .warm_prompt p {
+	font-size: 14px;
+	line-height: 30px;
+}
+.con_tishi .warm_prompt .info {
+	padding-left: 15px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #e9e9e9;
+}
+.con_tishi .warm_prompt .infos {
+	text-indent: 20px;
+}
+.con_tishi font{ color: #00a19e;}
+.control {
+	margin-top:7px;
+}
+.start {
+	display: block;
+	width: 100%;
+	text-align: center;
+	border-radius:3px;
+	line-height: 35px;
+	font-size: 14px;
+}
+.hong {
+	color:#FFF;
+	background-color: #00a19e;
+}
+</style>
+</head>
+
+<body>
+	<div class="all">
+		<div class="top4">
+			<a href="JavaScript:history.go(-1);" class="fanhui"><img src="__PUBLIC__/NewWap/images/e-a-1.png"></a>
+			<div class="tixing1">阅读币不足</div>
+			<div class="top4box">
+				<a href="/User/info.html"><img src="__PUBLIC__/NewWap/images/z3.png"></a>
+				<a href="/Bookcase/index.html"><img src="__PUBLIC__/NewWap/images/z5.png"></a>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="xian3"></div>
+		<div class="con_tishi">
+    <div class="con_tishi_title"><{$content[title]}></div>
+    <div class="warm_prompt">
+      <p class="info">发布时间：<{$content[attribute]}></p>
+      <p class="info">章节字数：<{$content[number]}> 字</p>
+      <p class="info">本章价格：<em class="count"><{$content.the_price}></em> 阅读币</p>
+      <p class="info"><font color="blue">阅读币不足请充值。</font></p>
+    </div>
+    <table class="control" width="100%">
+      <tr>
+        <td width="100%"><a class="hong start" href="/Pay/index.html">立即充值</a></td>
+      </tr>
+    </table>
+                </div>
+
+		<div class="xian3"></div>
+		<div class="xian3"></div>
+		 <include file="Index:bot" />
+	</div>
+</body>
+</html>

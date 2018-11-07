@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>免费小说书库_小说书库-<{$website.web_name}></title>
+<meta name="keywords" content="免费小说书库,小说书库,<{$website.web_name}>书库"/>
+<meta name="description" content="<{$website.web_name}>书库包括:武侠仙侠,奇幻玄幻,科幻灵异,都市言情,穿越女频,青春校园,历史军事,网游竞技,职业官场等在线小说阅读下载!"/>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+</head>
+<body>
+<include file="Index:top" />
+<div id="box">
+<div class="dir">
+    <a href="/Stacks/index/type/<{$Think.get.type}>/gender/2/vip/<{$Think.get.vip}>/state/<{$Think.get.state}>/click/<{$Think.get.click}>.html" class="<{$gender2}>">女生</a>
+    <a href="/Stacks/index/type/<{$Think.get.type}>/gender/1/vip/<{$Think.get.vip}>/state/<{$Think.get.state}>/click/<{$Think.get.click}>.html" class="<{$gender1}>">男生</a>
+</div>
+<div class="wrap-jp">
+    <div class="categories-item">
+      <div class="categories-bq"> 分类： </div>
+      <ul class="categlries-list">
+        <li class="categlries-name <{$type}>"> <a href="/Stacks/index/type/0/gender/<{$Think.get.gender}>/vip/<{$Think.get.vip}>/state/<{$Think.get.state}>/click/<{$Think.get.click}>.html" >全部</a> </li>
+        <foreach name="types" item="vo">
+        <li class="categlries-name <if condition="$Think.get.type eq $key">activite</if>"> <a href="/Stacks/index/type/<{$key}>/gender/<{$Think.get.gender}>/vip/<{$Think.get.vip}>/state/<{$Think.get.state}>/click/<{$Think.get.click}>.html" ><{$vo}></a> </li>
+        </foreach> 
+      </ul>
+    </div>
+    <div class="categories-item border-less" style="padding-left:80px;">
+      <div class="categories-bq" style="width:80px;"> 作品属性： </div>
+      <ul class="categlries-list">
+        <li class="categlries-name <{$vip3}>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/3/state/<{$Think.get.state}>/click/<{$Think.get.click}>.html" >不限</a> </li>
+        <li class="categlries-name <{$vip2}>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/2/state/<{$Think.get.state}>/click/<{$Think.get.click}>.html" >免费</a> </li>
+        <li class="categlries-name <{$vip1}>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/1/state/<{$Think.get.state}>/click/<{$Think.get.click}>.html" >按本</a> </li>
+        <li class="categlries-name <{$vip0}>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/0/state/<{$Think.get.state}>/click/<{$Think.get.click}>.html" >按章</a></li>
+      </ul>
+    </div>    
+    <div class="categories-item border-less" style="padding-left:80px;">
+      <div class="categories-bq" style="width:80px;"> 作品状态： </div>
+      <ul class="categlries-list">
+        <li class="categlries-name <{$state}>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/<{$Think.get.vip}>/state/0/click/<{$Think.get.click}>.html" >不限</a> </li>
+        <li class="categlries-name <if condition="$Think.get.state eq 1">activite</if>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/<{$Think.get.vip}>/state/1/click/<{$Think.get.click}>.html" >连载</a> </li>
+        <li class="categlries-name <if condition="$Think.get.state eq 2">activite</if>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/<{$Think.get.vip}>/state/2/click/<{$Think.get.click}>.html" >完本</a> </li>
+      </ul>
+    </div>
+    <div class="categories-item border-less" style="padding-left:80px;">
+      <div class="categories-bq" style="width:80px;"> 排序方式： </div>
+      <ul class="categlries-list">
+        <li class="categlries-name <{$cl0}>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/<{$Think.get.vip}>/state/<{$Think.get.state}>/click/1.html" >最新更新</a> </li>
+        <li class="categlries-name <{$cl1}>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/<{$Think.get.vip}>/state/<{$Think.get.state}>/click/2.html" >总点击</a> </li>
+        <li class="categlries-name <{$cl2}>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/<{$Think.get.vip}>/state/<{$Think.get.state}>/click/3.html" >月点击</a> </li>
+        <li class="categlries-name <{$cl3}>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/<{$Think.get.vip}>/state/<{$Think.get.state}>/click/4.html" >周点击</a> </li>
+        <li class="categlries-name <{$cl4}>"> <a href="/Stacks/index/type/<{$Think.get.type}>/gender/<{$Think.get.gender}>/vip/<{$Think.get.vip}>/state/<{$Think.get.state}>/click/5.html" >日点击</a> </li>
+      </ul>
+    </div>
+  </div>
+  <div class="jingpin-list">
+        <foreach name="list" item="vo"> 
+    <div class="jingpin-list-item">
+      <div class="jingpin-list-item-title"> <a href="/books/<{$vo[book_id]}>.html"> <img src="/Public/<{$website.preload}>/images/vip.png" class="jingping-vip-icon"/>
+        </a> <a href="/books/<{$vo[book_id]}>.html" class="jingpin-list-item_title"><{$vo.book_name}></a> </div>
+      <div class="jingpin-list-item-newst">最新：<a href="/chapter/<{$vo[book_id]}>/<{$vo[num]}>.html"><{$vo.title}></a>（<{$vo.attribute}>）</div>
+      <div class="jingpin-list-item-authoer">作者：<a href="#"><{$vo.author_name}></a></div>
+    </div>
+ </foreach>          
+    <div class="pager"><{$page}></div>
+  </div>
+  </div>
+<include file="Index:bot" />
+</body>
+</html>

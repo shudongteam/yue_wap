@@ -1,0 +1,9 @@
+<volist name="message" id="fmessage">
+    <a href="/Message/reply/id/<{$fmessage.f_id}>.html">
+        <div class="comment-item">
+            <div class="comment-title"><{$fmessage.title}></div>
+            <div class="comment-content"><{$fmessage.content}></div>
+            <div class="wrap-comment-author"> <span><{$fmessage.pen_name}></span><span><{$fmessage.time}></span><span class="wrap-comment-icon"><img src="/Public/<{$website.preload}>/images/comment-icon.png" class="comment-icon"/>回复(<{$fmessage.num}>)</span> </div>
+        </div>
+    </a>
+</volist>

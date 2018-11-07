@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title><{$bookinfo.book_name}>最新章节列表_<{$bookinfo.book_name}>全文阅读,<{$bookinfo.book_name}>txt全集下载_<{$bookinfo.pen_name}>-<{$website.web_name}></title>
+<meta name="keywords" content="<{$bookinfo.book_name}>最新章节,<{$bookinfo.book_name}>txt下载" />
+<meta name="description" content="本站提供<{$bookinfo.book_name}>最新章节列表免费在线阅读,包括<{$bookinfo.book_name}>txt下载,<{$bookinfo.book_name}>全文阅读,更多<{$bookinfo.book_name}>txt全集下载尽在<{$website.web_name}>。" />
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/<{$website.preload}>/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/<{$website.preload}>/js/jquery.cookie.js"></script>
+</head>
+<body>
+<header class="headers">
+    <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title"><{$bookinfo.book_name}></div>
+  <a href="/">
+  <div class="home"><span></span></div>
+  </a> </header>
+<div id="box">
+<div class="dir">
+      <if condition="$xuxie==1">
+          <a href="/showclist/<{$bookinfo.book_id}>/paixu/asc.html" class="active">正序</a>
+          <a href="/showclist/<{$bookinfo.book_id}>/paixu/desc.html">倒序</a>    
+      <else />
+       <a href="/showclist/<{$bookinfo.book_id}>/paixu/asc.html">正序</a>
+       <a href="/showclist/<{$bookinfo.book_id}>/paixu/desc.html" class="active">倒序</a>
+      </if>    
+    
+</div>
+<div class="con_tishi">
+    <ul class="directory_list">
+        <volist name="chapterlist"  id="vo">
+      <li><a href="/chapter/<{$bookinfo.book_id}>/<{$vo.num}>.html"><if condition="$vo[the_price]!=0"><span>vip</span></if><{$vo.title}></a></li>
+      </volist>
+    </ul>
+        <div class="pager2"><{$page}></div>
+  </div>
+    <div class="wrap-content">
+  <div class="wrap-content-title">
+    <div>好书推荐</div>
+  </div>
+  <ul class="like-list">
+    <volist name="potential"  id="vo">
+    <li> <a href="/books/<{$vo.book_id}>.html"><img src="/Upload/Book/zhong/<{$vo.upload_img}>"/></a>
+      <p> <a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a> </p>
+    </li>
+   </volist>
+  </ul>
+</div>    
+</div>
+    <include file="Index:bot" /> 
+</body>
+</html>

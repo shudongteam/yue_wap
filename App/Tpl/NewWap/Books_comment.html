@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title><{$books.book_name}>_<{$books.author_name}>-<{$website.web_name}></title>
+<meta name="keywords" content="<{$books.book_name}>,<{$books.author_name}>全文阅读,<{$books.book_name}>最新章节"/>
+<meta name="description" content="<{$website.web_name}>提供<{$books.book_name}>乐免费在线阅读下载,包括<{$books.book_name}>最新章节及时更新,<{$books.book_name}>是本站首发小说,欢迎收藏以便下次阅读。" />
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/detail.js"></script>
+</head>
+<body>
+<div class="all">
+    <div class="top4">
+      <a href="" class="fanhui" onclick="javascript:history.back(-1);"><img src="__PUBLIC__/NewWap/images/e-a-1.png"></a>
+      <div class="tixing1">评论</div>
+      <div class="top4box">
+        <a href=""><img src="images/z3.png"></a>
+        <a href=""><img src="images/z5.png"></a>
+        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+  
+    <div class="pinglun">
+      <div class="pinglun1">
+        <h1><{$data.book_name}> 的回复</h1>
+        <ul>
+        <volist name="data[message]" id="vo">
+         <a href="/Message/reply/id/<{$vo.f_id}>.html">
+          <li>
+            <h2><span style="color:#00aba7;"><{$vo.pen_name}>：</span><{$vo.title}></h2>
+            <{$vo.content}>
+            <h3><img src="images/h-a-1.png">&nbsp;<{$vo.time}> <span style="color:#c3c3c3;">回复(<{$vo.num}>)</span></h3>
+            <h5 class="clearfix"></h5>
+          </li>
+        </a>
+        </volist>
+        <{$page}>
+        </ul>
+        <a href="/Message/release/bookid/<{$data.book_id}>"><input type="button" value="吐槽一下"></a>
+      </div>
+    </div>
+    <include file="Index:bot" /> 
+  </div>
+</body>
+</html>

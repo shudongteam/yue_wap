@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>我的账户</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+</head>
+<body>
+<header class="headers">
+    <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title">我的账户</div>
+  <a href="/">
+  <div class="home"><span></span></div>
+  </a> </header>
+<div id="box">
+    <div id="user_info_line"><span><img src="/Upload/upload_portrait/<{$Think.cookie.portrait}>a.jpg"/> </span><b class="user_zhanghu"><{$to.pen_name}>(id:<{$to.user_id}>)</b><br>
+    <b>余额:<font color="#FF0000"><{$to.alance}></font> 阅读币</b><br>
+    <b><img src="/Public/Vip/a<{$mem_vip}>.gif" width="72" height="15" /></b></div>
+    <div class="read"> <a href="/Personal/User/info" class="read-sorts">
+    <div class="icon-sorts"><i class="zh"></i></div>
+    <span>账户详情</span> </a> <a href="/Personal/User/vip" class="read-sorts">
+    <div class="icon-sorts"><i class="dj"></i></div>
+    <span>等级说明</span> </a> <a href="/Personal/User/integral" class="read-sorts">
+    <div class="icon-sorts"><i class="jf"></i></div>
+    <span>积分说明</span> </a> <a href="/Personal/Pay/package" class="read-sorts">
+    <div class="icon-sorts"><i class="nhy"></i></div>
+    <span>包年会员</span> </a> </div>
+  <ul class="personal_list">
+    <li style="margin-bottom:10px;"> <a href="/Personal/Bookcase/index" class="personal_list_bg sj" > <span class="left_a">书架</span> </a> </li>
+    <li><a href="/Personal/Pay/record" class="personal_list_bg jl" >充值记录</a> </li>
+    <li><a href="/Personal/Consumption/index" class="personal_list_bg jl" >消费记录</a> </li>
+    <li style="margin-bottom:10px;"> <a href="/Personal/Pay/index"  class="personal_list_bg cz" > <span class="left_a">账户充值</span> </a> </li>
+    <li> <a href="/Personal/Sign/index"  class="personal_list_qd" > <span class="left_a">签到</span> </a> </li>
+    <li style="margin-bottom:10px;"> <a href="/Personal/Help/index"  class="personal_list_bg bz" > <span class="left_a">帮助中心</span> </a> </li>
+    <if condition="$web_id eq 1 or $is_weixin eq 0">
+    <li style="margin-bottom:10px;text-align: center; font-size:16px;"> <a href="/Login/logout.html" style="padding-left: 0px;"> <span class="left_a">退出账户</span> </a> </li>
+    <else/>
+    </if>
+    <!-- <eq name="web_id" value="1"><li style="margin-bottom:10px;text-align: center; font-size:16px;"> <a href="/Login/logout.html" style="padding-left: 0px;"> <span class="left_a">退出账户</span> </a> </li></eq> -->
+  </ul>
+</div>
+<include file="/Wap/Index:bot" /> 
+</body>
+</html>

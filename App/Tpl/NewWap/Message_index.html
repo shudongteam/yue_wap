@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$books.book_name}>-评论</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/<{$website.preload}>/js/message.js"></script>
+<style type="text/css">
+.more-comment{ display: block;text-align: center; padding: 20px;}
+.fabu-content{  padding-right: 20px;}    
+.reply-textarea{
+	width:100%;
+	height:150px;
+	border:0;
+	border-bottom:1px solid #d8d9da;
+	padding:10px;
+	font-size:0.8em;
+}
+</style>
+</head>
+
+<body>
+	<div class="all">
+		<div class="top4">
+			<a href="JavaScript:history.go(-1);" class="fanhui"><img src="__PUBLIC__/NewWap/images/e-a-1.png"></a>
+			<div class="top48">
+			<ul>
+                            <li class=""><a href="/books/<{$books.book_id}>.html" style="color: #FFF">详情</a></li>
+                            <li class="top4l"><a href="/Message/index/bookid/<{$books.book_id}>.html" style="color: #FFF">评论</a></li>
+			</ul>
+			</div>
+			<div class="top4box">
+				<a href="/User/info.html"><img src="__PUBLIC__/NewWap/images/z3.png"></a>
+				<a href="/Bookcase/index.html"><img src="__PUBLIC__/NewWap/images/z5.png"></a>
+				<div class="clearfix"></div>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="pinglun">
+			<div class="pinglun1">
+				<h1><{$books.book_name}> -评论</h1>
+				<ul id='zuijia'><volist name="mesg" id="vo">
+
+					<li>
+						<h2><span style="color:#00aba7;"><{$vo.pen_name}>：</span><{$vo.content}></h2>
+                                                <h3><img src="__PUBLIC__/NewWap/images/h-a-1.png">&nbsp;<{$vo.time}>  <span style="color:#c3c3c3;"><a href="/Message/huifu/id/<{$vo.f_id}>.html">回复(<{$vo.num}>)</a></span></h3>
+						<h5 class="clearfix"></h5>
+					</li>
+                                       </volist>
+
+				</ul>
+                                  <div class="reply-wrap">
+                                     <input name="bookid" type="hidden" id='bookid' value="<{$books.book_id}>" />
+                                      <span id='xianshi'>
+                                      <a href="javascript:;" class="more-comment" id="message-ajax"> 更多评论... </a>
+                                      </span>
+                                <div class="fabu-content">
+                                  <textarea name="content" id='content'  class="reply-textarea" placeholder="请输入内容..."></textarea>
+                                </div>
+				<input type="button" id='tijiao' value="吐槽一下">
+			</div>
+		</div>
+<include file="Index:bot" />
+		
+	</div>
+</body>
+</html>

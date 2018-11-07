@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>充值成功</title>
+<link rel="shortcut icon" href="__PUBLIC__/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/NewWap/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+  $(function () {
+    if ($.cookie("history") != null) {
+        var json = eval("(" + $.cookie("history") + ")");
+        // var shuzu = "<a href=\"" + json.url + "\">" + json.title + "</a>";
+        $("#last_read").attr({
+          href: json.url
+        });
+    }
+});
+</script>
+</head>
+<body>
+  <div class="all">
+    <div class="top4">
+      <div class="tixing1"><{$title}></div>
+      <div class="top4box">
+        <a href="/User/info"><img src="__PUBLIC__/NewWap/images/z3.png"></a>
+        <a href="/Bookcase/index"><img src="__PUBLIC__/NewWap/images/z5.png"></a>
+        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="cg">
+      <div class="cg1">
+        <img src="__PUBLIC__/NewWap/images/h1.png">
+      </div>
+      <div class="cg2">
+        <a href="/Bookcase/reading" class="cg3">继续阅读</a>
+        <a href="/Pay/index" class="cg4">再次充值</a>
+      </div>
+      <div class="clearfix"></div>
+      <h2>您已充值成功<font color="red"><{$money}>元</font>，到账<font color="red"><{$readmoney}>阅读币。</font></h2>
+    </div>
+  </div>  
+</body>
+</html>

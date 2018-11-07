@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$bookinfo.book_name}>最新章节列表_<{$bookinfo.book_name}>全文阅读,<{$bookinfo.book_name}>txt全集下载_<{$bookinfo.pen_name}>-<{$website.web_name}></title>
+<meta name="keywords" content="<{$bookinfo.book_name}>最新章节,<{$bookinfo.book_name}>txt下载" />
+<meta name="description" content="本站提供<{$bookinfo.book_name}>最新章节列表免费在线阅读,包括<{$bookinfo.book_name}>txt下载,<{$bookinfo.book_name}>全文阅读,更多<{$bookinfo.book_name}>txt全集下载尽在<{$website.web_name}>。" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+</head>
+
+<body style="display: block;">
+	<div class="all">
+	    <div class="top4">
+	      <a href="javascript:history.back(-1);" class="fanhui"><img src="__PUBLIC__/NewWap/images/e-a-1.png"></a>
+	      <div class="tixing1" style="width: 68%;"><{$bookinfo.book_name}></div>
+	      <div class="top4box" style="width: 16%;">
+	        <a href="/"><img src="/Public/NewWap/images/e-a-3.png"></a>
+	        <div class="clearfix"></div>
+	      </div>
+	      <div class="clearfix"></div>
+	    </div>
+		<div class="zhangjie">
+                    <if condition="$xuxie==1">
+                        <h2 class="bian4"><a href="/showclist/<{$bookinfo.book_id}>/paixu/asc.html" style=" color: #fff; display: block">章节目录</a></h2>
+                        <h2 class=""><a href="/showclist/<{$bookinfo.book_id}>/paixu/desc.html" style=" color: #00a19e; display: block">最新章节</a></h2>
+                    <else />
+                    <h2 class=""><a href="/showclist/<{$bookinfo.book_id}>/paixu/asc.html" style=" color: #00a19e; display: block">章节目录</a></h2>
+                    <h2 class="bian4"><a href="/showclist/<{$bookinfo.book_id}>/paixu/desc.html" style=" color: #fff; display: block">最新章节</a></h2>
+                    </if>   
+			<div class="clearfix"></div>
+		</div>
+		<div class="mulua">
+			<ul class="mulu">
+           <volist name="chapterlist"  id="vo">
+               <li><a href="/Chapter/<{$bookinfo.book_id}>/<{$vo.num}>.html"><{$vo.title}></a><if condition="$vo[the_price]==0"><img src="__PUBLIC__/NewWap/images/c-a-5.png"><else /><img src="__PUBLIC__/NewWap/images/c-a-6.png"></if><h5 class="clearfix"></h5></li>
+           </volist>
+			</ul>
+		</div>
+                <div class="fanye"><{$page}></div>
+                <div class="clearfix"></div>
+		<div class="xian2"></div>
+		<div class="changdu">
+			<div class="wj">
+			<div class="bt1">
+				<h1></h1>
+				<h2>新书畅读</h2>
+				<div class="clearfix"></div>
+			</div>
+			<div class="cxn">
+                            <volist name="potential"  id="vo">
+				<a href="/Books/index?bookid=<{$vo.book_id}>">
+					<img src="/Upload/Book/zhong/<{$vo.upload_img}>">
+					<h2><{$vo.book_name}></h2>
+				</a>
+                            </volist>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+		</div>
+		<include file="Index:bot" />
+
+	</div>
+</body>
+</html>

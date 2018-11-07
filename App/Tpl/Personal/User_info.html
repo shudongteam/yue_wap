@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>账户信息</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/CheckPost.js"></script>
+</head>
+<body>
+<header class="headers">
+    <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title">账户信息</div>
+  <a href="/">
+  <div class="home"><span></span></div>
+  </a> </header>
+<div id="box">
+  <div id="user_info_line"><span><img src="/Upload/upload_portrait/<{$Think.cookie.portrait}>a.jpg"/> </span><b class="user_zhanghu"><{$to.pen_name}>(id:<{$to.user_id}>)</b><br>
+    <b>余额:<font color="#FF0000"><{$to.alance}></font> 阅读币</b><br>
+    <b><img src="/Public/Vip/a<{$mem_vip}>.gif" width="72" height="15" /></b></div>
+  <div class="con_tishi">
+	<div class="con_tishi_title">账户详情</div>
+	<div class="warm_prompt">
+                <p class="info">我的推荐票：<font color="red"><{$isuser.vote}></font> 票</p>
+		<p class="info">我的红钻：<font color="red"><{$isuser.vipvote}></font> 红钻</p>
+		<p class="info">我的积分：<font color="red"><{$isuser.integral}></font> 分</p>
+	</div>
+</div>
+  <div class="con_tishi">
+	<div class="con_tishi_title">修改密码</div>
+    <div class="change-pwd">
+            <p>旧的密码</p>
+            <div class="wrapper">
+                <input name="oldpassword" id="oldpassword" type="password" class="input" placeholder="请输入旧的密码" >
+            </div>
+            <p>新的密码</p>
+            <div class="wrapper">
+                <input name="password" id="password" type="password" class="input" placeholder="请输入新的密码">
+            </div>
+            <p>重复新密码</p>
+            <div class="wrapper" style="margin-bottom:10px;">
+                <input name="passwords" id="passwords" type="password" class="input" placeholder="请再次输一次新的密码">
+            </div>
+            <input type="submit" class="btn01" value="提交" id="gengxin"/>
+    </div>
+
+</div>
+</div>
+<include file="/Wap/Index:bot" /> 
+</body>
+</html>

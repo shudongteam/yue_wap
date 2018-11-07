@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>小说排行榜_热门小说推荐_全本小说_完本小说排行榜-<{$website.web_name}></title>
+<meta name="keywords" content="小说排行榜,热门小说推荐,全本小说,完本小说排行榜,<{$website.web_name}>"/>
+<meta name="description" content="<{$website.web_name}>小说排行榜提供最新最全的小说排行榜单,包括:奇幻玄幻排行,热门小说推荐榜,全本小说榜,完本小说排行榜,想了解跟多跟新请来<{$website.web_name}>"/>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+</head>
+<body>
+<include file="Index:top" />
+<div id="box">
+  <div class="rclist-main">
+    <div class="wrap-content-title">
+      <div>作品订阅榜</div>
+    </div>
+    <div class="ranking-list">
+      <div class="ranking-listtop">
+        <ul class="diplay-flex">
+          <volist name="dingyue"  id="vo" offset="0" length='3'>
+            <li>
+              <p><a href="/books/<{$vo.book_id}>.html"> <img src="/Upload/Book/zhong/<{$vo.upload_img}>" alt="<{$vo.book_name}>" /></a></p>
+              <p class="biaoti"><{++$b}> <a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a></p>
+            </li>
+          </volist>
+        </ul>
+      </div>
+      <div class="ranking-listbottom">
+        <volist name="dingyue"  id="vo" offset="3" length='7'>
+          <p><span><{++$b}></span><a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a></p>
+        </volist>
+      </div>
+    </div>
+  </div>
+  <div class="rclist-main">
+    <div class="wrap-content-title">
+      <div>作品点击榜</div>
+    </div>
+    <div class="ranking-list">
+      <div class="ranking-listtop">
+        <ul class="diplay-flex">
+          <volist name="dianji"  id="vo" offset="0" length='3'>
+            <li>
+              <p><a href="/books/<{$vo.book_id}>.html"> <img src="/Upload/Book/zhong/<{$vo.upload_img}>" alt="<{$vo.book_name}>" /></a></p>
+              <p class="biaoti"><{++$c}> <a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a></p>
+            </li>
+          </volist>
+        </ul>
+      </div>
+      <div class="ranking-listbottom">
+        <volist name="dianji"  id="vo" offset="3" length='7'>
+          <p><span><{++$c}></span><a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a></p>
+        </volist>
+      </div>
+    </div>
+  </div>
+
+  <div class="rclist-main" style="margin-bottom: 15px;">
+    <div class="wrap-content-title">
+      <div>收藏排行榜</div>
+    </div>
+    <div class="ranking-list">
+      <div class="ranking-listtop">
+        <ul class="diplay-flex">
+          <volist name="collection"  id="vo" offset="0" length='3'>
+            <li>
+              <p><a href="/books/<{$vo.book_id}>.html"> <img src="/Upload/Book/zhong/<{$vo.upload_img}>" alt="<{$vo.book_name}>" /></a></p>
+              <p class="biaoti"><{++$f}> <a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a></p>
+            </li>
+          </volist>
+        </ul>
+      </div>
+      <div class="ranking-listbottom">
+        <volist name="collection"  id="vo" offset="3" length='7'>
+          <p><span><{++$f}></span><a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a></p>
+        </volist>
+      </div>
+    </div>
+  </div>
+</div>
+<include file="Index:bot" />
+</body>
+</html>

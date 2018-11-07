@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title><{$books.book_name}>_<{$books.author_name}>-<{$website.web_name}></title>
+<meta name="keywords" content="<{$books.book_name}>,<{$books.author_name}>全文阅读,<{$books.book_name}>最新章节"/>
+<meta name="description" content="<{$website.web_name}>提供<{$books.book_name}>乐免费在线阅读下载,包括<{$books.book_name}>最新章节及时更新,<{$books.book_name}>是本站首发小说,欢迎收藏以便下次阅读。" />
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/detail.js"></script>
+</head>
+<body>
+<include file="Index:top" />
+<div id="box">
+  <div class="column">
+    <div class="left"> <img src="/Upload/Book/zhong/<{$books.upload_img}>" alt="" width="90" height="120" /> </div>
+    <div class="right">
+      <h3><{$books.book_name}></h3>
+      <p class="info"> 作者：<span class="zuozhe"><{$books.author_name}></span><br />
+        字数：<{$books.words}> 字 <br />
+        点击：<{$books.click_total}> 次<br />
+        收藏：<span id='genduid'><{$books.collection_total}></span> 人</p>
+      <input type="hidden" name="bookid" id="bookid" value="<{$books.book_id}>" />
+    </div>
+    <table class="control" width="100%">
+      <tr>
+        <td width="63%"><a class="hong start" href="/chapter/<{$books.book_id}>/1.html">开始阅读</a></td>
+        <td width="2">&nbsp;</td>
+        <td width="35%" id="shoucangid"><if condition="$collection==1"><a class="bai start" href="javascript:void(0)" onClick="shou(1)" >+点击收藏</a><else/><a class="lan start" href="javascript:void(0)" onClick="shou(2)" >-取消收藏</a></if></td>
+      </tr>
+    </table>
+  </div>
+  <div class="con_tishi">
+    <div class="con_tishi_title">内容简介</div>
+    <div class="jianjie">
+      <p><{$books.book_brief}></p>
+    </div>
+    <div class="jianjie_ico"><a href="javascript:;" class="text_spread">展开▼</a><a href="javascript:;" class="text_flod" style=" display:none;">收起▲</a></div>
+  </div>
+  <div class="con_tishi">
+<ul class="novel-read-status">
+<li><div class="tui"><{$books.vote_total}></div><span class="tou" id="vote">我要投票</span></li>
+<li><div class="zuan"><{$books.vipvote_total}></div><span class="zuanshi" id="vipvote">我要赠送</span></li>
+<li><div class="da"><{$books.exceptional_total}></div><a href="/Exceptional/index/book/<{$books.book_id}>.html"><span class="dashang">我要打赏</span><a></li>
+</ul>
+  </div>
+  <div class="con_tishi">
+    <div class="con_tishi_title">章节目录</div>
+    <div class="directory_new"><a href="/chapter/<{$books.book_id}>/<{$books.newcontnet.num}>.html"><span>最新</span><{$books.newcontnet.title}><if condition="$books['newcontnet']['the_price'] neq 0"><b>[vip]</b></if></a></div>
+    <ul class="directory_list">
+        <volist name="books.newlinst"  id="vo">
+      <li><a href="/chapter/<{$books.book_id}>/<{$vo.num}>.html"><span>免费</span><{$vo.title}></a></li>
+      </volist>
+        <li style="text-align: center; "><a href="/showclist/<{$books.book_id}>.html">更多目录 >></a></li>
+    </ul>
+  </div>
+  <div class="con_tishi">
+    <div class="con_tishi_title"><a href="/Message/release/bookid/<{$books.book_id}>.html" class="gengduo">发表评论</a>书评专区</div>
+     <div id="zuijia">
+    <volist name="books.message" id="fmessage">
+    <a href="/Message/reply/id/<{$fmessage.f_id}>.html">
+    <div class="comment-item">
+      <div class="comment-title"><{$fmessage.title}></div>
+      <div class="comment-content"><{$fmessage.content}></div>
+      <div class="wrap-comment-author"> <span><{$fmessage.pen_name}></span><span><{$fmessage.time}></span><span class="wrap-comment-icon"><img src="/Public/<{$website.preload}>/images/comment-icon.png" class="comment-icon"/>回复(<{$fmessage.num}>)</span> </div>
+    </div>
+    </a>
+  </volist>
+     </div>
+        <a href="javascript:;" class="more-comment" id="message-ajax"> 更多评论... </a>
+  </div>
+    <div class="wrap-content">
+  <div class="wrap-content-title">
+    <div>新书榜单</div>
+  </div>
+  <ul class="like-list">
+    <volist name="books.newbook"  id="vo">
+    <li> <a href="/books/<{$vo.book_id}>.html"><img src="/Upload/Book/zhong/<{$vo.upload_img}>"/></a>
+      <p> <a href="/books/<{$vo.book_id}>.html"><{$vo.book_name}></a> </p>
+    </li>
+   </volist>
+  </ul>
+</div>
+</div>
+    <include file="Index:bot" /> 
+</body>
+</html>

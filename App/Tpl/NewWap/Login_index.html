@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>网站登录-<{$website.web_name}></title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+</head>
+<body>
+<div class="all">
+    <div class="top4">
+      <a href="javascript:history.back(-1);" class="fanhui"><img src="__PUBLIC__/NewWap/images/e-a-1.png"></a>
+      <div class="tixing1" style="width: 68%;">登录</div>
+      <div class="top4box" style="width: 16%;">
+        <a href="/"><img src="/Public/NewWap/images/e-a-3.png"></a>
+        <div class="clearfix"></div>
+      </div>
+      <div class="clearfix"></div>
+    </div>
+    <div class="denglu">
+      
+      <div class="zm">
+        <li><h2><img src="__PUBLIC__/NewWap/images/j-a-7.png"></h2><input name="user_name" id="user_name" type="text"></li>
+        <li><h2><img src="__PUBLIC__/NewWap/images/j-a-8.png"></h2><input name="user_pass" id="user_pass" type="password"></li>
+      </div>
+      <div class="zm1">
+        <input type="button" id="submit" value="登录" style="background-color:#00a19e;color:white;">
+        <input type="button" id="reg" value="注册" style="color:#00a19e;" onclick="window.location.href='/Login/register'">
+      </div>
+      <div class="hz">
+        <img src="__PUBLIC__/NewWap/images/j-b-1.png" class="hzbt">
+        <div class="hz1">
+          <!--
+          <a class="qq_des" href="/Accounts/qq.html?backUrl=<{$Think.get.backUrl}>"><img src="__PUBLIC__/NewWap/images/j-b-2.png"></a>
+         -->
+          <eq name="is_weixin" value="1"><a href="/Accounts/weixin.html?backUrl=<{$Think.get.backUrl}>"><img src="__PUBLIC__/NewWap/images/j-b-3.png"></a></eq>
+          <!--
+          <a href="/Accounts/weibo.html?backUrl=<{$Think.get.backUrl}>"><img src="__PUBLIC__/NewWap/images/j-b-4.png"></a>
+         -->
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <script>
+        $(".hz1 img").eq(0).css("margin-left","0");
+        $(function(){
+          var redirect_url = '<{$Think.get.backUrl}>';
+          $('#submit').click(function(){
+            var user_name = $('#user_name').val();
+            var user_pass = $('#user_pass').val();
+            $.ajax({
+                url: "/Login/login",
+                type: "post",
+                data: 'user_name=' + user_name + '&user_pass=' + user_pass,
+                success: function (data) {
+                    if (data == 1) {
+                        if (redirect_url) {
+                          window.location.href = redirect_url;
+                        } else {
+                          window.location.href = '/';
+                        }
+                    } else {
+                        Toast(data, 1000);
+                    }
+                }
+            });
+          });
+        });
+        function IsPC() {
+            var userAgentInfo = navigator.userAgent;
+            var Agents = ['Android','iPhone','Symbian','WindowsPhone','iPod','BlackBerry','Windows CE'];
+            var flag = true;
+            for (var v = 0; v < Agents.length; v++) {
+                if (userAgentInfo.indexOf(Agents[v]) > 0) {
+                    flag = false;
+                    break;
+                }
+            }
+            if (flag) {
+              $('.qq_des').hide();
+            }
+        }
+        IsPC();
+</script>
+      </script>
+    </div>
+  </div>
+</body>
+</html>

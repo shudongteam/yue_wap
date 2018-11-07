@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title><{$website.web_name}>_<{$title}></title>
+<meta name="keywords" content="最新小说,原创小说,小说大全,小说库"/>
+<meta name="description" content="<{$website.web_name}>提供最新的原创小说大全，提供各类网络小说在线阅读，希望大家支持<{$website.web_name}>"/>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<link href="__PUBLIC__/<{$website.preload}>/style1.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+</head>
+<body>
+<div  class="all">
+<include file="/NewWap/Index:top" />
+<div id="box">
+<div class="wrap-content">
+  <div class="wrap-content-title">
+    <div><{$title}></div>
+  </div>
+  <ul class="result-set">
+    <volist name="arr"  id="vo"> 
+    <li class="result-set-item">
+      <div class="result-set-item-top"> <a href="/Books/index/bookid/<{$vo.book_id}>.html"> <img src="/Upload/Book/zhong/<{$vo.upload_img}>" class="searchset-img"/>
+        <dl>
+          <dd class="result-set-title"><{$vo.book_name}></dd>
+          <dd class="result-set-author">作者：<{$vo.author_name}></dd>
+          <dd class="result-set-auther"> <{$vo.book_brief|msubstr=0,24}></dd>
+        </dl>
+        </a> </div>
+    </li>
+    </volist>   
+  </ul>
+  <div class="fanye"><{$page}></div>
+</div>
+</div>
+<include file="/NewWap/Index:bot" />
+</div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title><{$content[title]}>_<{$books.book_name}>-<{$website.web_name}></title>
+<meta name="keywords" content="<{$content[title]}>,<{$books.book_name}>,<{$website.web_name}>" />
+<meta name="description" content="<{$books.book_name}>小说由作者：<{$user.pen_name}>原创,是难得一见的好书,在<{$website.web_name}>全面连载!欢迎大家免费收看:<{$content[title]}>" />
+<link href="__PUBLIC__/<{$website.preload}>/reading.css" type="text/css" rel="stylesheet" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/reading.js"></script>
+<script type="text/javascript">
+    var booksname="<{$books.book_name}>";
+    var art_title = "<{$content[title]}>";
+    var art_url = '/chapter/<{$books.book_id}>/<{$content['num']}>.html';
+    $.cookie("history", "{title:\""+booksname +":"+ art_title + "\""+",url:\"" + art_url + "\"}", {expires: 7, path: '/'});
+ </script>
+</head>
+<body>
+<div class="all">
+<div class="juzhong">
+  <div class="title"><{$content.title}></div>
+  <div class="content">
+   <p style="text-align: center;"><br>
+   <center><font  color="red" size="5" >关注作者授权公众号继续阅读</font></center><br> 
+   <center><font >后续章节，请关注后继续阅读</font></center><br>
+   <center><img src="<{$qrcode_url}>" style="width:70%"></center><br>
+   <center><font color="red" size="4">长按上图识别图中二维码关注</font></center><br>
+   <!-- <center>或搜索“<{$website.weixin}>”关注“<{$website.web_name}>”</center>  -->
+   </p>
+ </div>
+  </div>
+</div>
+</div>
+</body>
+</html>

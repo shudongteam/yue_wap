@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>首冲礼包</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#button").click(function () {
+                $.ajax({
+                    url: "/Personal/Gift/libaoadd.html",
+                    type: "get",
+                    data: 'type=1',
+                    success: function (data) {
+                        if(data==1){
+                            alert("领取成功");
+                        }else{
+                            alert(data);
+                        }
+                    }
+                });
+        });
+        
+    });
+    
+</script>
+
+</head>
+<body>
+<header class="headers">
+  <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title">首冲礼包</div>
+  <a href="/">
+  <div class="home"><span></span></div>
+  </a> </header>
+<div id="box">
+  <div class="con_tishi">
+    <div class="con_tishi_title">(首冲礼包)首次充值后方可领取</div>
+    <div class="warm_prompt">
+      <p class="info">奖品一：5朵鲜花</p>
+      <p class="info">奖品二：2颗钻石</p>
+      <p class="info">奖品三：200阅读币</p>
+    </div>
+      <table class="control" width="100%">
+      <tr>
+        <td width="100%">  <input type="submit" id="button" class="btn01" value="点击领取"/></td>
+      </tr>
+    </table>
+  </div>
+</div>
+<include file="/Wap/Index:bot" />
+</body>
+</html>

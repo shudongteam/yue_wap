@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>回复-评论</title>
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/<{$website.preload}>/js/message.js"></script>
+<style type="text/css">
+.more-comment{ display: block;text-align: center; padding: 20px;}
+.fabu-content{  padding-right: 20px;}    
+.reply-textarea{
+	width:100%;
+	height:150px;
+	border:0;
+	border-bottom:1px solid #d8d9da;
+	padding:10px;
+	font-size:0.8em;
+}
+</style>
+</head>
+
+<body>
+	<div class="all">
+		<div class="top4">
+			<a href="JavaScript:history.go(-1);" class="fanhui"><img src="__PUBLIC__/NewWap/images/e-a-1.png"></a>
+			<div class="top48">
+			<ul>
+                            <li class="" style=" width: 100px;">查看回复</li>
+			</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="pinglun">
+			<div class="pinglun1">
+				<h1><{$zhuti.pen_name}> -评论</h1>
+				<ul id='zuijia'>
+                                    	<li>
+						<h2><{$zhuti.content}></h2>
+                                                <h3><img src="__PUBLIC__/NewWap/images/h-a-1.png">&nbsp;<{$zhuti.time}></h3>
+						<h5 class="clearfix"></h5>
+					</li>
+                                    
+                                    <volist name="conmesg" id="vo">
+
+					<li>
+						<h2><span style="color:#00aba7;"><{$vo.pen_name}>：</span><{$vo.content}></h2>
+                                                <h3><img src="__PUBLIC__/NewWap/images/h-a-1.png">&nbsp;<{$vo.time}> </h3>
+						<h5 class="clearfix"></h5>
+					</li>
+                                       </volist>
+
+				</ul>
+                                  <div class="reply-wrap">
+                                <div class="fabu-content">
+                                    <input name="mesgid" type="hidden" id='mesgid' value="<{$zhuti.f_id}>" />
+                                  <textarea name="content" id='content'  class="reply-textarea" placeholder="请输入内容..."></textarea>
+                                </div>
+				<input type="button" id='tucao' value="吐槽一下">
+			</div>
+		</div>
+<include file="Index:bot" />
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>我的书架</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+</head>
+<body>
+<header class="headers">
+    <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title">我的书架</div>
+  <a href="/">
+  <div class="home"><span></span></div>
+  </a> </header>
+<div id="box">
+  <div class="recently_read"><span>没有阅读记录</span></div>
+  <div class="pay_box">
+    <div class="pay_box_title"><b>我的书架</b></div>
+    <ul class="list">
+      <volist name="books" id="books">
+      <li> <a href="javascript:void(0)" class="btns shanchu" onClick="del(this,<{$books.book_id}>)">删除</a> 
+        <p class="name"> <a href="/books/<{$books.book_id}>.html"><{$books.book_name}></a></p>
+        <!-- <p class="jiage"> 上次读到：<a href="/chapter/<{$books.book_id}>/<{$books.num}>.html" class="chapter"><{$books.title}></a> </p> -->
+        <p class="jiage"> 上次读到：<a href="/chapter/<{$books.book_id}>/<{$books.chapter}>.html" class="chapter"><{$books.title}></a> </p>
+      </li>
+      </volist>
+    </ul>
+   <div class="pager"><{$page}></div>
+  </div>
+</div>
+<include file="/Wap/Index:bot" /> 
+<script type="text/javascript">
+ /*删除书架*/
+function del(obj, bookid) {
+            $.ajax({
+                url: "/Collection/dell.html",
+                type: "post",
+                data: 'bookid=' + bookid,
+                success: function (data) {
+                    if (data == 1) {
+                        $(obj).parents("li").remove();
+                    } else {
+                        Toast("系统错误", 1000);
+                        $("#errors").html("系统错误");
+                    }
+                }
+            });
+    
+}   
+</script>
+</body>
+</html>

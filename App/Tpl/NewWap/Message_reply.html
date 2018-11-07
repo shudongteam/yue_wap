@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>悠米阅读_原创小说网</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style1.css" type="text/css" rel="stylesheet" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/detail.js"></script>
+</head>
+<body>
+<div class="all">
+<header class="headers">
+    <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title"><{$books.book_name}></div>
+  <a href="/">
+  <div class="home"><span></span></div>
+  </a> </header>
+<div id="box">
+  <div class="con_tishi">
+    <div class="con_tishi_title">精选评论</div>
+    <div class="comment-item">
+      <div class="comment-title"><{$mesfes.title}></div>
+      <div class="comment-content"><{$mesfes.content}></div>
+      <div class="wrap-comment-author"> <span><{$mesfes.pen_name}></span><span><{$mesfes.time}></span></div>
+    </div>
+    <div id="zikuang" >
+      <textarea name="content" id="content" class="reply-textarea" style="height: 55px;" placeholder="请输入内容..."></textarea>
+      <input type="submit" value="确认回复" class="btn01" id="qurenhuifu" />
+    </div>
+    <a href="javascript:;" class="more-comment" id="zi-ajax"> 我要回复 </a> 
+  <input id="bookid" type="hidden" value="<{$books.book_id}>" />
+  <input id="ids" type="hidden" value="<{$mesfes.f_id}>" />
+  </div>
+  <div class="con_tishi">
+    <div class="con_tishi_title">最新回复</div>
+    <div id="zuijia">
+    <volist name="zimess"  id="vo">
+    <div class="comment-item">
+      <div class="comment-content"><{$vo.content}></div>
+      <div class="wrap-comment-author"> <span><{$vo.pen_name}></span><span><{$vo.time}></span> </div>
+    </div>
+   </volist>
+    </div>
+  </div>
+</div>
+<include file="Index:bot" />
+</div>
+</body>
+</html>

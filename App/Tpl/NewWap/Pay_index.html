@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>账户充值</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/NewWap/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<style type="text/css">
+  img.current {
+    border:2px solid #00a19e;
+  }
+</style>
+</head>
+<body>
+<div class="all">
+  <include file="Header:back" />
+    <div class="yuer">
+      <h1 style="text-align: center;">账户余额（<{$alance|0}>阅读币）</h1>
+      <!-- <p style="text-align: center;color:white;line-height: 100%"></p> -->
+    </div>
+    <div class="czz">
+      <div class="czz1">
+      <div class="lines" style="width:100%; position:relative; display:flex;
+            justify-content:center;
+            align-items:center;">
+        <div style="height:1px;width:100%;background-color: #999999;margin:16px auto;float: left;z-index:-1;"></div>
+        <div style="position: absolute;float: left;background-color: white;padding:0 5px;color:#999999;font-family:宋体">充值方式</div>
+        <div class="clearfix"></div>
+      </div>
+       <!--  <h1>充值方式：</h1> -->
+        <div class="czz2">
+          <if condition="$is_weixin neq 0">
+            <img src="__PUBLIC__/NewWap/images/kx5.png" style="margin-left: 0;"  class="current">
+            <img src="__PUBLIC__/NewWap/images/kx6.png" style="display: none">
+          <else />
+            <img src="__PUBLIC__/NewWap/images/kx5.png" style="display: none">
+            <img src="__PUBLIC__/NewWap/images/kx6.png" class="current" style="display: none">
+          </if>
+          <!--
+          <img src="__PUBLIC__/NewWap/images/kx7.png">
+          -->
+          <div class="clearfix"></div>
+        </div>
+        <div class="lines" style="width:100%; position:relative; display:flex;
+            justify-content:center;margin-top: 5px;
+            align-items:center;">
+        <div style="height:1px;width:100%;background-color: #999999;margin:10px auto;float: left;z-index:-1;"></div>
+        <div style="position: absolute;float: left;background-color: white;padding:0 5px;color:#999999;font-family:宋体">选择充值金额</div>
+        <div class="clearfix"></div>
+        </div>
+       <!--  <h2>选择充值金额：</h2> -->
+        <div class="czz3" style="margin-top:5px;">
+          <div class="czz4" style="border:2px solid #00a19e;">
+            <img src="/Public/NewWap/images/pay/hot.png" style="float:right;margin: 2%;">
+            <h3 style="color:#00a19e;margin-left: 19%">50元</h3>
+            <h4 style="color:#00a19e;margin-left: 19%">5000阅读币</h4>
+            <h5 style="color:#00a19e"><span style="background: #00a19e">赠</span>400币</h5>
+          </div>
+          <div class="czz4">
+            <h3>365元</h3>
+            <h4 style="color:#c50000;font-weight: bold;">VIP年度会员</h4>
+            <h5>书籍无限量阅读</h5>
+          </div>
+          <div class="czz4">
+            <h3>30元</h3>
+            <h4>3000阅读币</h4>
+            <h5>&nbsp;</h5>
+          </div>  
+          <div class="czz4">
+            <h3>100元</h3>
+            <h4>10000阅读币</h4>
+            <h5><span>赠</span>1000币</h5>
+          </div>
+          <div class="czz4">
+            <h3>200元</h3>
+            <h4>20000阅读币</h4>
+            <h5><span>赠</span>2200币</h5>
+          </div>
+          <div class="czz4" >
+            <h3>500元</h3>
+            <h4>50000阅读币</h4>
+            <h5><span>赠</span>5800币</h5>
+          </div>
+          
+          <div class="clearfix"></div>
+        </div>
+      </div>
+      <div class="czz7" style="display: none;">确认信息：充值方式 <span style="color:#ff0000;" id="pay_type">微信直充</span>  金额 <span style="color:#ff0000;" id="money">50元</span></div>
+      <div class="clearfix"></div>
+      <form class="fomm1" method="post" action="/Pay/pay.html"  name="alipayment">
+        <if condition="$is_weixin neq 0">
+          <input type="hidden" name="payChannelType" value="0" id="payChannelType" />
+        <else />
+          <input type="hidden" name="payChannelType" value="2" id="payChannelType" />
+        </if>
+        <input type="hidden" name="moneyType" value="0" id="moneyType" />
+        <button class="czz8" style="border:none;">确认充值</button>
+       <!--  <input style="padding: 0px;" type="submit" class="czz8" value="确认充值"/> -->
+      </form>
+    </div>
+    <div class="czb">
+      <div class="czb1">
+        <div class="czb2">
+          <h1></h1>
+          <h2>温馨提示</h2>
+          <div class="clearfix"></div>
+        </div>
+        <ul>
+          <li><img src="__PUBLIC__/NewWap/images/kx8.png"><h3>支付宝、微信钱包：1元=100阅读币</h3><h5 class="clearfix"></h5></li>
+          <li><img src="__PUBLIC__/NewWap/images/kx8.png"><h3>全站包年阅读更划算：每天只需要1元钱</h3><h5 class="clearfix"></h5></li>
+          <li><img src="__PUBLIC__/NewWap/images/kx8.png"><h3>充值遇到问题时，请联系客服</h3><h5 class="clearfix"></h5></li>
+        </ul>
+        <!-- <div style="height: 1px;margin-top:10px;background-color:#e6e6e6;"></div> -->
+      </div>
+    </div>
+        <!-- <include file="/NewWap/Index:bot" /> -->
+  </div>
+  <script>
+    $(".czz2 img").click(function(){
+      var i = $(this).index();
+      if (i == 1) {
+        $('#pay_type').html('微信扫码');
+      } else if(i == 2) {
+        $('#pay_type').html('支付宝');
+      } else {
+        $('#pay_type').html('微信直充');
+      }
+      $('#payChannelType').val(i);
+      $(this).addClass("current").siblings().removeClass("current");
+    });
+    $(".czz4").click(function(){
+      var i = $(this).index();
+      $('#moneyType').val(i);
+      $('#money').html($(this).children("h3").html());
+      $(".czz4").css("border","2px solid #eeeeee")
+      $(".czz4 h3").css("color","#838383")
+      $(".czz4 h4").css("color","#838383")
+      $(".czz4 h5").css("color","#838383")
+      $(".czz4 h5 span").css("background-color","#838383")
+      // $(".czz4").css("background-image","url(__PUBLIC__/NewWap/images/pay/2.png)")
+      // $(this).css("background-image","url(__PUBLIC__/NewWap/images/pay/ac.png)")
+      $(this).css("border","2px solid #00a19e")
+      $(this).children("h3").css("color","#00a19e")
+      $(this).children("h4").css("color","#00a19e")
+      $(this).children("h5").css("color","#00a19e")
+      $(this).find("span").css("background-color","#00a19e")
+    });
+  </script>  
+</body>
+</html>

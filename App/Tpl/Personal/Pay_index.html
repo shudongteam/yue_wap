@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>账户充值</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script language=javascript>
+
+    //礼物赠送遍历选择器
+    $(function () {
+    $(".pay_ul a").click(function () {
+        //遍历删除所有元素的样式
+        $(".pay_ul a").each(function () {
+            $(this).removeClass("on");
+        });
+        //单独给元素增加样式
+        $(this).addClass("on");
+		//修改显示
+	$(".zhifutype").html($(this).children("span").html());
+        $("#payChannelType").val($(this).attr("id"));
+    });
+	
+    $("#num_list li").click(function () {
+        //遍历删除所有元素的样式
+        $("#num_list li").each(function () {
+        $(this).css("border", "solid 1px #eee");
+        $(this).children(".jiage").css("color", "#333");
+        $(this).children(".yuedubi").css("color", "#888888");
+        $(this).children(".zeng").css("color", "#707070");
+
+        });
+        //单独给元素增加样式
+        $(this).css("border", "solid 1px #fd8c02");
+        $(this).children(".jiage").css("color", "#fd8c02");
+        $(this).children(".yuedubi").css("color", "#fd8c02");
+        $(this).children(".zeng").css("color", "#fd8c02");
+	$(".zhifujiage").html($(this).attr("id"));
+        $("#money").val($(this).attr("id"));
+    });  
+    });
+</script>
+</head>
+<body>
+<header class="headers">
+    <div class="goback"><a href="JavaScript:history.go(-1);"></a></div>
+  <div class="head-title">账户充值</div>
+  <a href="/">
+  <div class="home"><span></span></div>
+  </a> </header>
+<div id="box">
+  <div class="pay_box">
+    <div class="pay_box_title">您的余额：<span><{$to.alance}></span> 阅读币</div>
+    <p class="pay_tishi">选择充值渠道</p>
+    <div class="pay_ul"> 
+    <if condition="$web_id neq 25 and $is_weixin neq 0">
+      <a class="on chong" id="1" href="javascript:void(0)"><span>微信支付</span> </a>
+    </else>
+    </if>
+    <!-- <neq name="web" value="25"><a class="on chong" id="1" href="javascript:void(0)"><span>微信支付</span> </a> </neq> -->
+    
+    <eq name="user_id" value="996277"><a class="sao" id="2" href="javascript:void(0)"><span>微信扫码</span></a></eq>
+    <a class="zhi" id="3" href="javascript:void(0)" style="margin-right:0px;"><span>支付宝 </span></a> </div>
+    <p class="pay_tishi">选择充值金额</p>
+    <ul id="num_list">
+      <li class="mgr" id="30">
+        <div class="jiage">30元</div>
+        <div class="yuedubi">3000阅读币</div>
+        <div class="zeng"><b>赠</b> 0元</div>
+      </li>
+      <li class="mgr on" id="50">
+        <div class="jiage">&nbsp;&nbsp;&nbsp;50元<img src="/Public/Wap/images/hot.jpg" style="float:right;"></div>
+        <div class="yuedubi">5000阅读币</div>
+        <div class="zeng"><b>赠</b> 400币</div>
+      </li>
+      <li id="100" >
+        <div class="jiage">100元</div>
+        <div class="yuedubi">10000阅读币</div>
+        <div class="zeng"><b>赠</b> 600币</div>
+      </li>
+      <li id="200" class="mgr">
+        <div class="jiage">200元</div>
+        <div class="yuedubi">20000阅读币</div>
+        <div class="zeng"><b>赠</b> 1200币</div>
+      </li>
+      <li class="mgr" id="500">
+        <div class="jiage">500元</div>
+        <div class="yuedubi">50000阅读币</div>
+        <div class="zeng"><b>赠</b> 2400币</div>
+      </li>
+      <li id="365">
+        <div class="jiage">365元</div>
+        <div class="yuedubi"  style='color:red;font-weight:bold'>包年</div>
+        <div class="zeng">全站书任意看</div>
+      </li>
+    </ul>
+    <p class="pay_tishi">确认信息：充值方式：<span class="zhifutype"></span>,金额：<span class="zhifujiage">50</span> 元</p>
+    <form class="fomm1" method="post" action="/Personal/Pay/pay.html" onSubmit="return doLogin()" name="alipayment">
+      <if condition="($web_id eq 25) OR ($is_weixin eq 0)">
+      <input type="hidden" name="payChannelType" value="3" id="payChannelType" />
+      <else />
+      <input type="hidden" name="payChannelType" value="1" id="payChannelType" />
+      </if>
+      <input type="hidden" name="money" value="50" id="money" />
+      <input type="submit" class="btn01" value="下一步"/>
+    </form>
+  </div>
+  <div class="con_tishi">
+	<div class="con_tishi_title">温馨提示</div>
+	<div class="warm_prompt">
+		<p class="info">充值任意金额即可成为VIP会员<em><a href="/Personal/User/vip.html">（点击查看VIP会员等级及特权）</a></em></p>
+		<p class="info">支付宝、银行卡、微信钱包：1元=100阅读币</p>
+		<p class="info">全站包年阅读更划算：每天只需要1元钱</p>
+                <p class="info">充值遇到问题时，请联系客服(客服：微信搜索"<font style="color: #ff6347"><{$website.weixin}></font>"加好友或关注公众号，懒人直接戳<a href="/Addweixin/index.html" style="color: #ff6347">这里</a>)</p>
+	</div>
+</div>
+
+</div>
+ <include file="/Wap/Index:bot" />    
+</body>
+</html>

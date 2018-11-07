@@ -1,0 +1,1 @@
+<?php	return array ( 'book_id' => '4', 'book_name' => '瑾色流年，许你一世安然', 'title' => '第5章要让他亲眼看着这个孽种去死', 'chapter' => '5', );?>

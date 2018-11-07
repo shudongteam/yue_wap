@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title><{$content[title]}>_<{$books.book_name}>-<{$website.web_name}></title>
+<meta name="keywords" content="<{$content[title]}>,<{$books.book_name}>,<{$website.web_name}>" />
+<meta name="description" content="<{$books.book_name}>小说由作者：<{$user.pen_name}>原创,是难得一见的好书,在<{$website.web_name}>全面连载!欢迎大家免费收看:<{$content[title]}>" />
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+<meta content="yes" name="apple-mobile-web-app-capable">
+<meta content="black" name="apple-mobile-web-app-status-bar-style">
+<meta content="telephone=no" name="format-detection">
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<link href="__PUBLIC__/<{$website.preload}>/reading.css" type="text/css" rel="stylesheet" />
+<link href="__PUBLIC__/<{$website.preload}>/ds.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript">
+$(function () {
+    var booksname="<{$books.book_name}>";
+    var art_title = "<{$content[title]}>";
+    var art_url = '/chapter/<{$books.book_id}>/<{$content['num']}>.html';
+    $.cookie("history", "{title:\""+booksname +":"+ art_title + "\""+",url:\"" + art_url + "\"}", {expires: 7, path: '/'});
+});
+</script>
+<style type="text/css">
+  .p_button a {
+    height: 3.2rem;
+    line-height: 3.2rem;
+    font-size: 1.3rem;
+  }
+</style>
+</head>
+<body>
+<div class="all2 bg1">
+  <div class="top2">
+    <div class="top3">
+      <a href="/"><img src="__PUBLIC__/NewWap/images/d-a-2.png"></a>
+      <h2> <{$books.book_name}></h2>
+      <div class="clearfix"></div>
+    </div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="yuedu">
+    <h1><{$content[title]}></h1>
+    <div class="content juzhong"><p><{$content[content]}></p></div>
+    <div class="clearfix"></div>
+  </div>
+  <div class="p_button">
+    <a class="p_button_prev" href="/chaptertwo/<{$books.book_id}>/<{$chapterinfo['preid']}>.html<{$focus}>" >上一章</a>
+    <a class="p_button_next" href="/chaptertwo/<{$books.book_id}>/<{$chapterinfo['nextid']}>.html<{$focus}>" >下一章</a>
+    <div class="p_button_bottom">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</div>
+  </div>
+</div>
+</body>
+</html>

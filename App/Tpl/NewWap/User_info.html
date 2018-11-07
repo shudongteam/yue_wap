@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<meta content="telephone=no" name="format-detection" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"/>
+<title>个人中心</title>
+<link rel="shortcut icon" href="__PUBLIC__/<{$website.preload}>/Favicon.ico" type="image/x-icon" />
+<link href="__PUBLIC__/<{$website.preload}>/style.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/jquery.cookie.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/public.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Public/js/CheckPost.js"></script>
+<style type="text/css">
+  .s_color {color: #636164;}
+</style>
+</head>
+<body>
+<div class="all">
+<include file="Header:back" />
+<div class="clearfix"></div>
+    <div class="geren1">
+      <div class="geren2">
+        <if condition="cookie('portrait') eq 'portrait'">
+        <img style="border:0px;" src="/Upload/upload_portrait/portraita.jpg">
+        <else />
+         <img style="border:0px;" src="<php>echo cookie('portrait');</php>">
+        </if>
+      </div>
+        <div class="geren3">
+          <b class="s_color"><php>echo cookie('pen_name');</php>(id：<php>echo cookie('user_id');</php>)</b>
+          <br />
+          <b><img style="border:0px;margin-top: 5%;" src="/Public/Vip/a<{$mem_vip}>.gif" /></b>
+          <if condition="strtotime($user_money['vip_time']) gt time()">
+            <span class="s_color">vip：2018-05-02 11:00:22</span>
+          </if>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+    <div style="height:1px;background-color:#ededed;"></div>
+    <div class="geren4">
+      <ul>
+        <li>
+          <h1>我的余额</h1>
+          <h2><span class="s_color"><{$user_money.alance|default=0}></span></h2>
+          <a href="/Pay/index"><h3>去充值</h3></a>
+        </li>
+        <li>
+          <h1>我的阅明珠</h1>
+          <h2><span class="s_color"><{$user_money.vipvote|default=0}></span></h2>
+         <!--  <h3>查看记录</h3> -->
+        </li>
+        <li>
+          <h1>我的推荐票</h1>
+          <h2><span class="s_color"><{$user_money.vote|default=0}></span></h2>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+     <div style="height:1px;background-color:#ededed;"></div>
+    <!-- <div class="xian3"></div> -->
+    <div class="shezhi">
+      <ul>
+        <li><a href="/Bookcase/index/r/0"><!-- <h3><img src="__PUBLIC__/NewWap/images/f-a-5.png"></h3> --><h1 style="font-weight: 300;">&nbsp;我的书架</h1><!-- <h2>&gt;</h2> --><h5 class="clearfix"></h5></a></li>
+        <dd style="height: 1px;background-color:#f5f5f5;"></dd>
+        <li><a href="/Pay/index"><!-- <h3><img src="__PUBLIC__/NewWap/images/f-a-6.png"></h3> --><h1 style="font-weight: 300;">&nbsp;账户充值</h1><!-- <h2>&gt;</h2> --><h5 class="clearfix"></h5></a></li>
+        <dd style="height: 1px;background-color:#f5f5f5;"></dd>
+        <li><a href="/Pay/record"><!-- <h3><img src="__PUBLIC__/NewWap/images/f-a-3.png"></h3> --><h1 style="font-weight: 300;">&nbsp;充值记录</h1><!-- <h2>&gt;</h2> --><h5 class="clearfix"></h5></a></li> 
+        <dd style="height: 1px;background-color:#f5f5f5;"></dd>
+        <li><a href="/Consumption/index"><!-- <h3><img src="__PUBLIC__/NewWap/images/f-a-7.png"></h3> --><h1 style="font-weight: 300;">&nbsp;消费记录</h1><!-- <h2>&gt;</h2> --><h5 class="clearfix"></h5></a></li>
+        <dd style="height: 1px;background-color:#f5f5f5;"></dd>
+        <eq name="website[automatic]" value="0">
+            <li><a href="/Login/logout"><!-- <h3><img src="__PUBLIC__/NewWap/images/f-a-8.png"></h3> --><h1 style="font-weight: 300;">&nbsp;退出登录</h1><!-- <h2>&gt;</h2> --><h5 class="clearfix"></h5></a></li>
+            <dd style="height: 1px;background-color:#f5f5f5;"></dd>
+        </eq>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+    <include file="/NewWap/Index:bot" />
+  </div>
+</body>
+</html>
